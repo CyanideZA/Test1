@@ -101,7 +101,7 @@
             background-position: center;
             color: var(--light-text);
             text-align: center;
-            padding: 5rem 1rem;
+            padding: 40px 0;
         }
 
         .hero h2 {
@@ -212,145 +212,192 @@
             background: #e55c5c;
         }
 
-        /* Product Badge */
-        .product-badge {
-            position: absolute;
-            top: 20px;
-            right: -40px;
-            background: linear-gradient(135deg, var(--accent-color) 0%, #ff6b6b 30%, var(--accent-color) 70%, #ff8e8e 100%);
-            color: white;
-            padding: 5px 70px;
-            font-size: 1.0rem;
-            transform: rotate(45deg);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            z-index: 10;
-            background-size: 200% 200%;
-            transition: all 0.4s ease;
-            font-weight: bold;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-        }
-
-        .product-badge:hover {
-            background-position: 100% 100%;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-            transform: rotate(45deg) scale(1.05);
-        }
-
-        .product-badge.scroll-effect {
-            background-position: 50% 50%;
-            animation: gradientShift 2s ease-in-out infinite;
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 0%; }
-            50% { background-position: 100% 100%; }
-            100% { background-position: 0% 0%; }
-        }
-
-        .popular-badge {
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--accent-color);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-        }
-
-        /* Shop Section */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .product-card {
+        /* Cart Container */
+        .cart-container {
             background: white;
-            border-radius: 8px;
-            overflow: hidden;
+            border-radius: 10px;
+            padding: 25px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-            position: relative;
+            margin-top: 40px;
         }
 
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .product-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .product-card-content {
-            padding: 1.5rem;
-        }
-
-        .product-card h3 {
-            margin-bottom: 0.5rem;
+        .cart-container h3 {
+            font-family: 'Playfair Display', serif;
             color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
         }
 
-        .product-rating {
-            display: flex;
-            align-items: center;
-            margin: 0.5rem 0;
+        .cart-items {
+            margin-bottom: 20px;
         }
 
-        .product-rating i {
-            color: #ffc107;
-            margin-right: 0.2rem;
-        }
-
-        .product-rating span {
-            margin-left: 0.5rem;
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        /* Cart Summary */
-        .cart-summary {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: white;
-            border-radius: 8px;
-            padding: 1rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            z-index: 90;
-            max-width: 300px;
-        }
-
-        .cart-summary h3 {
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-
-        .cart-items-list {
-            max-height: 200px;
-            overflow-y: auto;
-            margin-bottom: 0.5rem;
+        .empty-cart {
+            text-align: center;
+            color: #888;
+            font-style: italic;
+            padding: 20px;
         }
 
         .cart-item {
             display: flex;
             justify-content: space-between;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid var(--border-color);
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .cart-item div:first-child {
+            flex: 2;
+        }
+
+        .cart-item div:last-child {
+            display: flex;
+            align-items: center;
+        }
+
+        .remove-item {
+            background: none;
+            border: none;
+            color: #e74c3c;
+            cursor: pointer;
+            margin-left: 15px;
+            font-size: 1.1rem;
         }
 
         .cart-total {
-            font-weight: bold;
-            font-size: 1.1rem;
             text-align: right;
-            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 20px 0;
+            padding-top: 15px;
+            border-top: 2px solid #f0f0f0;
         }
 
-        /* Calendar Modal */
+        /* Form Styles */
+        .payment-method {
+            margin: 25px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .payment-method h4 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .payment-options label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .payment-options input {
+            margin-right: 10px;
+        }
+
+        .checkout-form h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .form-group textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        .stripe-element, .eft-instructions {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .eft-instructions h5 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .checkout-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            width: 100%;
+            transition: background 0.3s;
+            margin-top: 20px;
+            font-size: 1.1rem;
+        }
+
+        .checkout-btn:hover {
+            background: #166088;
+        }
+
+        .checkout-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            border-radius: 5px;
+            background: #4cb5ae;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateX(100%);
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .notification.error {
+            background: #e74c3c;
+        }
+
+        /* Modal */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -372,6 +419,57 @@
             visibility: visible;
         }
 
+        .order-success-modal {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .order-success-modal i {
+            font-size: 4rem;
+            color: #4cb5ae;
+            margin-bottom: 20px;
+        }
+
+        .order-success-modal h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .order-details {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .order-details p {
+            margin-bottom: 10px;
+        }
+
+        .modal-close-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+
+        .modal-close-btn:hover {
+            background: #166088;
+        }
+
+        /* Calendar Modal */
         .calendar-modal {
             background: white;
             border-radius: 8px;
@@ -513,18 +611,6 @@
             .consultation-options {
                 grid-template-columns: 1fr;
             }
-
-            .product-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
-
-            .cart-summary {
-                bottom: 0;
-                right: 0;
-                left: 0;
-                max-width: 100%;
-                border-radius: 0;
-            }
         }
     </style>
 </head>
@@ -613,73 +699,119 @@
                     </ul>
                     <button class="btn add-service" data-service="Health Consultation" data-price="150">Book Now</button>
                 </div>
+
+                <!-- New Services -->
+                <div class="consultation-card">
+                    <h3><i class="fas fa-cloud-sun"></i> Tarot Reading</h3>
+                    <p class="price">$95</p>
+                    <ul>
+                        <li>In-depth tarot card reading</li>
+                        <li>Guidance on life questions</li>
+                        <li>Future insights and possibilities</li>
+                        <li>45-minute session</li>
+                        <li>Summary notes provided</li>
+                    </ul>
+                    <button class="btn add-service" data-service="Tarot Reading" data-price="95">Book Now</button>
+                </div>
+
+                <div class="consultation-card">
+                    <h3><i class="fas fa-home"></i> Feng Shui Consultation</h3>
+                    <p class="price">$175</p>
+                    <ul>
+                        <li>Home or office energy assessment</li>
+                        <li>Personalized space optimization</li>
+                        <li>Balance and harmony recommendations</li>
+                        <li>Follow-up implementation guide</li>
+                        <li>60-minute session + walkthrough</li>
+                    </ul>
+                    <button class="btn add-service" data-service="Feng Shui Consultation" data-price="175">Book Now</button>
+                </div>
+
+                <div class="consultation-card">
+                    <h3><i class="fas fa-flask"></i> Advanced Nutrition Protocol</h3>
+                    <p class="price">$225</p>
+                    <ul>
+                        <li>Comprehensive nutritional assessment</li>
+                        <li>Custom supplement protocol</li>
+                        <li>Dietary optimization plan</li>
+                        <li>90-minute deep dive session</li>
+                        <li>2-week follow-up support</li>
+                        <li>Personalized meal suggestions</li>
+                    </ul>
+                    <button class="btn add-service" data-service="Advanced Nutrition Protocol" data-price="225">Book Now</button>
+                </div>
             </div>
         </div>
-    </div>
-</section>
 
-<!-- Shop Section -->
-<section class="shop-container section-padding">
-    <div class="container">
-        <h2 class="section-title">Healing Products</h2>
-        <div class="product-grid">
-            <!-- Iodine Supplement -->
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                     alt="Iodine Supplement">
-                <div class="product-card-content">
-                    <h3>Iodine Supplement</h3>
-                    <p class="price">R299.00</p>
-                    <p>High-quality iodine supplement for thyroid health</p>
-                    <div class="product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>4.9/5 (98 reviews)</span>
-                    </div>
-                    <button class="btn add-to-cart" data-product="Iodine Supplement" data-price="299">Add to Cart</button>
+        <!-- Cart Section -->
+        <div class="cart-container">
+            <h3>Your Consultation Bookings</h3>
+            <div class="cart-items">
+                <p class="empty-cart">You haven't booked any consultations yet</p>
+            </div>
+            <div class="cart-total">
+                <p>Total: <span id="cart-total">R0.00</span></p>
+            </div>
+
+            <!-- Payment Method Selection -->
+            <div class="payment-method">
+                <h4>Payment Method</h4>
+                <div class="payment-options">
+                    <label>
+                        <input type="radio" name="payment-method" value="stripe" checked>
+                        <span>Credit/Debit Card</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="payment-method" value="eft">
+                        <span>Bank Transfer (EFT)</span>
+                    </label>
                 </div>
             </div>
 
-            <!-- Methylene Blue -->
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                     alt="Methylene Blue">
-                <div class="product-card-content">
-                    <div class="product-badge">Bestseller</div>
-                    <h3>Methylene Blue</h3>
-                    <p class="price">R399.00</p>
-                    <p>Pharmaceutical grade methylene blue for cognitive support</p>
-                    <div class="product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>4.9/5 (98 reviews)</span>
-                    </div>
-                    <button class="btn add-to-cart" data-product="Methylene Blue" data-price="399">Add to Cart</button>
+            <!-- Checkout Form -->
+            <form id="checkout-form" class="checkout-form">
+                <h4>Your Details</h4>
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Full Name" required>
                 </div>
-            </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="phone" placeholder="Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="notes" placeholder="Any specific concerns or questions you'd like to address"></textarea>
+                </div>
 
-            <!-- Additional products would go here -->
+                <!-- Stripe Payment Element (hidden for EFT) -->
+                <div id="stripe-payment-element" class="stripe-element">
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 5px; text-align: center;">
+                        <p>Stripe payment integration would be implemented here in a production environment.</p>
+                        <p>For demonstration, we'll simulate a successful payment.</p>
+                    </div>
+                </div>
+
+                <!-- EFT Instructions (hidden by default) -->
+                <div id="eft-instructions" class="eft-instructions" style="display: none;">
+                    <h5>EFT Payment Instructions</h5>
+                    <p>Please make payment to:</p>
+                    <p><strong>Bank:</strong> Standard Bank</p>
+                    <p><strong>Account Name:</strong> Sarah Lawry Healing</p>
+                    <p><strong>Account Number:</strong> 0123456789</p>
+                    <p><strong>Branch Code:</strong> 123456</p>
+                    <p><strong>Reference:</strong> Your Name + Order #</p>
+                    <p>Email proof of payment to <strong>orders@sarahlawryhealing.com</strong></p>
+                </div>
+
+                <button type="submit" id="submit-order" class="checkout-btn">
+                    <span id="button-text">Complete Booking</span>
+                    <span id="button-spinner" class="spinner" style="display: none;"></span>
+                </button>
+            </form>
         </div>
     </div>
 </section>
-
-<!-- Cart Summary -->
-<div class="cart-summary">
-    <h3>Your Cart</h3>
-    <div class="cart-items-list">
-        <p class="empty-cart">Your cart is empty</p>
-    </div>
-    <div class="cart-total">
-        Total: <span id="cart-total">R0.00</span>
-    </div>
-    <a href="#checkout" class="btn" id="checkout-button">Proceed to Checkout</a>
-</div>
 
 <!-- Calendar Modal -->
 <div class="modal-overlay" id="calendar-modal">
@@ -706,92 +838,23 @@
     </div>
 </div>
 
-<!-- Checkout Section -->
-<section id="checkout" class="section-padding" style="background: var(--light-bg); display: none;">
-    <div class="container">
-        <h2 class="section-title">Checkout</h2>
-        <div class="checkout-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-            <div class="order-summary">
-                <h3>Order Summary</h3>
-                <div class="checkout-items">
-                    <!-- Items will be populated by JavaScript -->
-                </div>
-                <div class="checkout-total">
-                    <p>Total: <span id="checkout-total">R0.00</span></p>
-                </div>
-            </div>
+<!-- Order Success Modal -->
+<div class="modal-overlay" id="success-modal">
+    <div class="order-success-modal">
+        <i class="fas fa-check-circle"></i>
+        <h3>Booking Confirmed!</h3>
+        <p>Thank you for your booking. A confirmation email has been sent to your email address.</p>
 
-            <div class="checkout-form">
-                <h3>Customer Information</h3>
-                <form id="customer-info-form">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="address">Shipping Address</label>
-                        <textarea id="address" name="address" required></textarea>
-                    </div>
-
-                    <h3>Payment Method</h3>
-                    <div class="payment-options">
-                        <label>
-                            <input type="radio" name="payment-method" value="stripe" checked>
-                            <span>Credit/Debit Card</span>
-                        </label>
-                        <label>
-                            <input type="radio" name="payment-method" value="eft">
-                            <span>Bank Transfer (EFT)</span>
-                        </label>
-                    </div>
-
-                    <div id="stripe-payment-element">
-                        <div style="background: #f8f9fa; padding: 20px; border-radius: 5px; margin: 1rem 0;">
-                            <p>Secure card payment processed by Stripe</p>
-                            <div class="form-group">
-                                <label for="card-number">Card Number</label>
-                                <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
-                            </div>
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                                <div class="form-group">
-                                    <label for="expiry">Expiry Date</label>
-                                    <input type="text" id="expiry" placeholder="MM/YY">
-                                </div>
-                                <div class="form-group">
-                                    <label for="cvc">CVC</label>
-                                    <input type="text" id="cvc" placeholder="123">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="eft-instructions" style="display: none;">
-                        <div style="background: #f8f9fa; padding: 20px; border-radius: 5px; margin: 1rem 0;">
-                            <h4>EFT Payment Instructions</h4>
-                            <p>Please make payment to:</p>
-                            <p><strong>Bank:</strong> Standard Bank</p>
-                            <p><strong>Account Name:</strong> Sarah Lawry Healing</p>
-                            <p><strong>Account Number:</strong> 0123456789</p>
-                            <p><strong>Branch Code:</strong> 123456</p>
-                            <p><strong>Reference:</strong> Your Name + Order #</p>
-                            <p>Email proof of payment to <strong>orders@sarahlawryhealing.com</strong></p>
-                        </div>
-                    </div>
-
-                    <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Complete Purchase</button>
-                </form>
-            </div>
+        <div class="order-details">
+            <p><strong>Booking Reference:</strong> <span id="booking-ref"></span></p>
+            <p><strong>Customer Name:</strong> <span id="customer-name"></span></p>
+            <p><strong>Booking Total:</strong> <span id="booking-total"></span></p>
         </div>
+
+        <p>We will contact you within 24 hours to confirm your appointment time. Please check your email for details.</p>
+        <button class="modal-close-btn" id="modal-close">Return to Services</button>
     </div>
-</section>
+</div>
 
 <!-- Footer -->
 <footer>
@@ -854,31 +917,6 @@
       });
     });
 
-    // Add to cart buttons event listeners
-    document.querySelectorAll('.add-to-cart').forEach(button => {
-      button.addEventListener('click', function() {
-        const product = this.dataset.product;
-        const price = parseFloat(this.dataset.price);
-
-        // Check if product already in cart
-        const existingItem = cart.find(item => item.name === product && item.type === 'product');
-
-        if (existingItem) {
-          existingItem.quantity += 1;
-        } else {
-          cart.push({
-            type: 'product',
-            name: product,
-            price: price,
-            quantity: 1
-          });
-        }
-
-        updateCart();
-        showNotification(`${product} added to cart!`);
-      });
-    });
-
     // Close calendar modal
     document.getElementById('close-calendar').addEventListener('click', function() {
       document.getElementById('calendar-modal').classList.remove('active');
@@ -908,24 +946,6 @@
       }
     });
 
-    // Checkout button
-    document.getElementById('checkout-button').addEventListener('click', function(e) {
-      if (cart.length === 0) {
-        e.preventDefault();
-        showNotification('Your cart is empty!', true);
-        return;
-      }
-
-      // Show checkout section
-      document.getElementById('checkout').style.display = 'block';
-
-      // Update checkout items
-      updateCheckoutItems();
-
-      // Scroll to checkout
-      document.getElementById('checkout').scrollIntoView({ behavior: 'smooth' });
-    });
-
     // Payment method toggle
     document.querySelectorAll('input[name="payment-method"]').forEach(radio => {
       radio.addEventListener('change', function() {
@@ -940,37 +960,75 @@
     });
 
     // Form submission
-    document.getElementById('customer-info-form').addEventListener('submit', function(e) {
+    document.getElementById('checkout-form').addEventListener('submit', async function(e) {
       e.preventDefault();
 
-      // Get form data
-      const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value,
-        address: document.getElementById('address').value,
-        paymentMethod: document.querySelector('input[name="payment-method"]:checked').value,
-        orderItems: cart,
-        total: calculateTotal(),
-        orderDate: new Date().toLocaleDateString(),
-        orderNumber: generateOrderNumber()
-      };
+      if (cart.length === 0) {
+        showNotification('You haven\'t booked any consultations!', true);
+        return;
+      }
 
-      // Send email notifications
-      sendEmailNotifications(formData);
+      const formData = new FormData(this);
+      const paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
 
-      // Show success message
-      showNotification('Order placed successfully! You will receive a confirmation email shortly.');
+      // Show loading state
+      document.getElementById('button-text').style.display = 'none';
+      document.getElementById('button-spinner').style.display = 'inline-block';
+      document.getElementById('submit-order').disabled = true;
 
-      // Clear cart
-      cart = [];
-      updateCart();
+      try {
+        if (paymentMethod === 'stripe') {
+          // Simulate Stripe payment processing
+          await new Promise(resolve => setTimeout(resolve, 2000));
+        }
 
-      // Hide checkout section
-      document.getElementById('checkout').style.display = 'none';
+        // Process booking
+        const bookingData = {
+          to: formData.get('email'),
+          customer_name: formData.get('name'),
+          customer_email: formData.get('email'),
+          customer_phone: formData.get('phone'),
+          notes: formData.get('notes'),
+          booking_ref: 'SLB' + Date.now(),
+          booking_date: new Date().toLocaleDateString('en-ZA'),
+          booking_items: generateBookingItemsHTML(),
+          booking_total: calculateBookingTotal(),
+          payment_method: paymentMethod === 'stripe' ? 'Credit Card' : 'Bank Transfer (EFT)',
+          admin_email: 'a.lawry98@gmail.com'
+        };
 
-      // Reset form
-      this.reset();
+        // Send booking data to server
+        const response = await sendBookingToServer(bookingData);
+
+        if (response.success) {
+          // Show success modal with booking details
+          document.getElementById('booking-ref').textContent = bookingData.booking_ref;
+          document.getElementById('customer-name').textContent = bookingData.customer_name;
+          document.getElementById('booking-total').textContent = '$' + bookingData.booking_total;
+          document.getElementById('success-modal').classList.add('active');
+
+          // Reset cart and form
+          cart = [];
+          updateCart();
+          this.reset();
+        } else {
+          throw new Error(response.error || 'Failed to process booking');
+        }
+
+      } catch (error) {
+        console.error('Booking processing error:', error);
+        showNotification('Error: ' + error.message, true);
+      } finally {
+        // Reset button state
+        document.getElementById('button-text').style.display = 'inline';
+        document.getElementById('button-spinner').style.display = 'none';
+        document.getElementById('submit-order').disabled = false;
+      }
+    });
+
+    // Close modal functionality
+    document.getElementById('modal-close').addEventListener('click', function() {
+      document.getElementById('success-modal').classList.remove('active');
     });
 
     // Initialize calendar
@@ -1068,207 +1126,104 @@
 
     // Update cart display
     function updateCart() {
-      const cartItems = document.querySelector('.cart-items-list');
-      const cartTotal = document.getElementById('cart-total');
-      const checkoutButton = document.getElementById('checkout-button');
-
-      // Clear current cart items
-      cartItems.innerHTML = '';
-
-      // Add items to cart
-      let total = 0;
+      const cartItemsEl = document.querySelector('.cart-items');
+      const cartTotalEl = document.getElementById('cart-total');
 
       if (cart.length === 0) {
-        cartItems.innerHTML = '<p class="empty-cart">Your cart is empty</p>';
-        cartTotal.textContent = 'R0.00';
-        checkoutButton.style.opacity = '0.5';
-        checkoutButton.style.cursor = 'not-allowed';
+        cartItemsEl.innerHTML = '<p class="empty-cart">You haven\'t booked any consultations yet</p>';
+        cartTotalEl.textContent = '$0.00';
         return;
       }
 
-      checkoutButton.style.opacity = '1';
-      checkoutButton.style.cursor = 'pointer';
+      let cartHTML = '';
+      let total = 0;
 
       cart.forEach((item, index) => {
-        const itemTotal = item.price * item.quantity;
-        total += itemTotal;
-
-        const cartItem = document.createElement('div');
-        cartItem.className = 'cart-item';
-
-        if (item.type === 'service') {
-          cartItem.innerHTML = `
-                            <div>
-                                <strong>${item.name}</strong>
-                                <p>${item.date} at ${item.time}</p>
-                            </div>
-                            <div>
-                                <p>R${itemTotal.toFixed(2)}</p>
-                                <button class="remove-item" data-index="${index}">
-                                    <i class="fas fa-times"></i>
-                                </button>
-                            </div>
-                        `;
-        } else {
-          cartItem.innerHTML = `
-                            <div>
-                                <strong>${item.name}</strong>
-                                <p>R${item.price.toFixed(2)} x ${item.quantity}</p>
-                            </div>
-                            <div>
-                                <p>R${itemTotal.toFixed(2)}</p>
-                                <button class="remove-item" data-index="${index}">
-                                    <i class="fas fa-times"></i>
-                                </button>
-                            </div>
-                        `;
-        }
-
-        cartItems.appendChild(cartItem);
+        total += item.price * item.quantity;
+        cartHTML += `
+          <div class="cart-item">
+            <div>
+              <strong>${item.name}</strong>
+              <div>${item.date} at ${item.time}</div>
+            </div>
+            <div>
+              <span>$${item.price.toFixed(2)}</span>
+              <button class="remove-item" data-index="${index}">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </div>
+        `;
       });
 
-      // Update total
-      cartTotal.textContent = `R${total.toFixed(2)}`;
+      cartItemsEl.innerHTML = cartHTML;
+      cartTotalEl.textContent = '$' + total.toFixed(2);
 
       // Add event listeners to remove buttons
       document.querySelectorAll('.remove-item').forEach(button => {
         button.addEventListener('click', function() {
           const index = parseInt(this.dataset.index);
-          const removedItem = cart[index].name;
+          const removedItem = cart[index];
           cart.splice(index, 1);
           updateCart();
-          showNotification(`${removedItem} removed from cart`);
+          showNotification(`Removed ${removedItem.name} from your bookings`);
         });
       });
     }
 
-    // Update checkout items
-    function updateCheckoutItems() {
-      const checkoutItems = document.querySelector('.checkout-items');
-      const checkoutTotal = document.getElementById('checkout-total');
-
-      // Clear current checkout items
-      checkoutItems.innerHTML = '';
-
-      // Add items to checkout
-      let total = 0;
-
-      cart.forEach(item => {
-        const itemTotal = item.price * item.quantity;
-        total += itemTotal;
-
-        const checkoutItem = document.createElement('div');
-        checkoutItem.className = 'cart-item';
-
-        if (item.type === 'service') {
-          checkoutItem.innerHTML = `
-                            <div>
-                                <strong>${item.name}</strong>
-                                <p>${item.date} at ${item.time}</p>
-                            </div>
-                            <div>
-                                <p>R${itemTotal.toFixed(2)}</p>
-                            </div>
-                        `;
-        } else {
-          checkoutItem.innerHTML = `
-                            <div>
-                                <strong>${item.name}</strong>
-                                <p>R${item.price.toFixed(2)} x ${item.quantity}</p>
-                            </div>
-                            <div>
-                                <p>R${itemTotal.toFixed(2)}</p>
-                            </div>
-                        `;
-        }
-
-        checkoutItems.appendChild(checkoutItem);
-      });
-
-      // Update total
-      checkoutTotal.textContent = `R${total.toFixed(2)}`;
-    }
-
-    // Calculate total
-    function calculateTotal() {
-      return cart.reduce((total, item) => total + (item.price * item.quantity), 0);
-    }
-
-    // Generate order number
-    function generateOrderNumber() {
-      return 'ORD-' + Date.now().toString().slice(-8);
-    }
-
-    // Send email notifications
-    function sendEmailNotifications(formData) {
-      // Format order items for email
-      const orderItemsHtml = formData.orderItems.map(item => {
-        if (item.type === 'service') {
-          return `<li>${item.name} - R${item.price} (Scheduled for ${item.date} at ${item.time})</li>`;
-        } else {
-          return `<li>${item.name} - R${item.price} x ${item.quantity}</li>`;
-        }
-      }).join('');
-
-      // Prepare email parameters
-      const emailParams = {
-        customer_name: formData.name,
-        customer_email: formData.email,
-        customer_phone: formData.phone,
-        customer_address: formData.address,
-        order_number: formData.orderNumber,
-        order_date: formData.orderDate,
-        order_items: orderItemsHtml,
-        order_total: 'R' + formData.total.toFixed(2),
-        payment_method: formData.paymentMethod
-      };
-
-      // Send email to customer
-      emailjs.send('YOUR_SERVICE_ID', 'YOUR_CUSTOMER_TEMPLATE_ID', emailParams)
-          .then(function(response) {
-            console.log('Customer email sent successfully!', response.status, response.text);
-          }, function(error) {
-            console.error('Failed to send customer email:', error);
-          });
-
-      // Send email to admin
-      emailjs.send('YOUR_SERVICE_ID', 'YOUR_ADMIN_TEMPLATE_ID', emailParams)
-          .then(function(response) {
-            console.log('Admin email sent successfully!', response.status, response.text);
-          }, function(error) {
-            console.error('Failed to send admin email:', error);
-          });
-    }
-
     // Show notification
     function showNotification(message, isError = false) {
-      // Create notification element if it doesn't exist
-      let notification = document.getElementById('notification');
-
-      if (!notification) {
-        notification = document.createElement('div');
-        notification.id = 'notification';
-        notification.style.cssText = `
-                        position: fixed;
-                        bottom: 20px;
-                        right: 20px;
-                        padding: 15px 20px;
-                        border-radius: 4px;
-                        background: ${isError ? '#ff6b6b' : '#4a6fa5'};
-                        color: white;
-                        z-index: 1000;
-                        opacity: 0;
-                        transition: opacity 0.3s;
-                    `;
-        document.body.appendChild(notification);
-      }
-
+      const notification = document.createElement('div');
+      notification.className = 'notification' + (isError ? ' error' : '');
       notification.textContent = message;
-      notification.style.opacity = '1';
 
+      document.body.appendChild(notification);
+
+      // Trigger reflow
+      void notification.offsetWidth;
+
+      notification.classList.add('show');
+
+      // Remove notification after 3 seconds
       setTimeout(() => {
-        notification.style.opacity = '0';
+        notification.classList.remove('show');
+        setTimeout(() => {
+          document.body.removeChild(notification);
+        }, 300);
       }, 3000);
+    }
+
+    // Generate booking items HTML for email
+    function generateBookingItemsHTML() {
+      let html = '';
+      cart.forEach(item => {
+        html += `
+          <div style="margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #eee;">
+            <strong>${item.name}</strong><br>
+            Date: ${item.date}<br>
+            Time: ${item.time}<br>
+            Price: $${item.price.toFixed(2)}
+          </div>
+        `;
+      });
+      return html;
+    }
+
+    // Calculate booking total
+    function calculateBookingTotal() {
+      return cart.reduce((total, item) => total + item.price, 0).toFixed(2);
+    }
+
+    // Simulate sending booking to server
+    async function sendBookingToServer(bookingData) {
+      // In a real implementation, this would be an API call to your backend
+      console.log('Sending booking to server:', bookingData);
+
+      // Simulate network delay
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
+      // Simulate successful booking
+      return { success: true, bookingId: bookingData.booking_ref };
     }
   });
 </script>

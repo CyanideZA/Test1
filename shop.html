@@ -7,8 +7,570 @@
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #4a6fa5 0%, #166088 100%);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .logo p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        nav ul li a:hover {
+            opacity: 0.8;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Shop Hero */
+        .shop-hero {
+            background: linear-gradient(rgba(74, 111, 165, 0.8), rgba(22, 96, 136, 0.9)), url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .shop-hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+
+        .shop-hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Shop Container */
+        .section-padding {
+            padding: 60px 0;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: 20px; /* Added white space around entire card */
+            margin: 15px; /* Added space between cards if in a grid */
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-card img {
+            width: 80%; /* Smaller image */
+            height: 220px; /* Slightly reduced height */
+            object-fit: contain; /* Ensures full image is visible */
+            margin: 0 auto; /* Centers the image */
+            padding: 15px; /* White space around the image */
+            display: block;
+        }
+
+        .product-card-content {
+            padding: 20px;
+            flex: 1;                    /* let content take up remaining space */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: #4a6fa5;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #166088;
+            margin-bottom: 10px;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .product-rating i {
+            color: #ffc107;
+            margin-right: 3px;
+        }
+
+        .product-rating span {
+            margin-left: 10px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .add-to-cart {
+            background: #4cb5ae;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            width: 100%;
+            transition: background 0.3s;
+            margin-top: auto;           /* pushes button to bottom of card */
+            margin-bottom: 20px;        /* keep 20px gap */
+        }
+
+        .add-to-cart:hover {
+            background: #3a9c95;
+        }
+
+
+        .cart-container {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            grid-column: span 3; /* This makes it span all 3 columns */
+        }
+
+        @media (max-width: 1100px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+            }
+
+            .cart-container {
+                grid-column: span 2; /* Span 2 columns on medium screens */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr; /* 1 column on mobile */
+            }
+
+            .cart-container {
+                grid-column: span 1; /* Span 1 column on mobile */
+            }
+        }
+
+        .cart-container h3 {
+            font-family: 'Playfair Display', serif;
+            color: #4a6fa5;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .cart-items {
+            margin-bottom: 20px;
+        }
+
+        .empty-cart {
+            text-align: center;
+            color: #888;
+            font-style: italic;
+            padding: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .cart-item div:first-child {
+            flex: 2;
+        }
+
+        .cart-item div:last-child {
+            display: flex;
+            align-items: center;
+        }
+
+        .remove-item {
+            background: none;
+            border: none;
+            color: #e74c3c;
+            cursor: pointer;
+            margin-left: 15px;
+            font-size: 1.1rem;
+        }
+
+        .cart-total {
+            text-align: right;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 20px 0;
+            padding-top: 15px;
+            border-top: 2px solid #f0f0f0;
+        }
+
+        /* Form Styles */
+        .payment-method {
+            margin: 25px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .payment-method h4 {
+            margin-bottom: 15px;
+            color: #4a6fa5;
+        }
+
+        .payment-options label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .payment-options input {
+            margin-right: 10px;
+        }
+
+        .checkout-form h4 {
+            color: #4a6fa5;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .form-group textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        .stripe-element, .eft-instructions {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .eft-instructions h5 {
+            color: #4a6fa5;
+            margin-bottom: 15px;
+        }
+
+        .checkout-btn {
+            background: #4a6fa5;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            width: 100%;
+            transition: background 0.3s;
+            margin-top: 20px;
+            font-size: 1.1rem;
+        }
+
+        .checkout-btn:hover {
+            background: #166088;
+        }
+
+        .checkout-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            border-radius: 5px;
+            background: #4cb5ae;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateX(100%);
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .notification.error {
+            background: #e74c3c;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .order-success-modal {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .order-success-modal i {
+            font-size: 4rem;
+            color: #4cb5ae;
+            margin-bottom: 20px;
+        }
+
+        .order-success-modal h3 {
+            font-family: 'Playfair Display', serif;
+            color: #4a6fa5;
+            margin-bottom: 15px;
+        }
+
+        .order-details {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .order-details p {
+            margin-bottom: 10px;
+        }
+
+        .modal-close-btn {
+            background: #4a6fa5;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+
+        .modal-close-btn:hover {
+            background: #166088;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 15px;
+            color: #4cb5ae;
+        }
+
+        .footer-section p {
+            margin-bottom: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #4cb5ae;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        .footer-bottom p {
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .shop-hero h2 {
+                font-size: 2.2rem;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Debug Panel */
+        .debug-panel {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-top: 20px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .debug-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #4a6fa5;
+        }
+
+        .debug-log {
+            color: #e74c3c;
+        }
+
+        .debug-success {
+            color: #27ae60;
+        }
+    </style>
 </head>
 <body>
 <!-- Header and Navigation -->
@@ -49,7 +611,7 @@
         <div class="product-grid">
             <!-- Iodine Supplement -->
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                <img src="Images/Product_Iodine.png" alt="Iodine Supplement">
                      alt="Iodine Supplement">
                 <div class="product-card-content">
                     <h3>Iodine Supplement</h3>
@@ -70,8 +632,7 @@
 
             <!-- Methylene Blue -->
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                     alt="Methylene Blue">
+                <img src="Images/Product_MB.png" alt="Iodine Supplement">
                 <div class="product-card-content">
                     <div class="product-badge">Bestseller</div>
                     <h3>Methylene Blue</h3>
@@ -91,8 +652,7 @@
 
             <!-- Castor Oil Pack -->
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1603665276881-5c2f2f4dcec3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                     alt="Castor Oil Pack">
+                <img src="Images/Product_Castor.png" alt="Iodine Supplement">
                 <div class="product-card-content">
                     <h3>Castor Oil Pack</h3>
                     <p class="price">R449.00</p>
@@ -111,8 +671,7 @@
 
             <!-- Magnesium Glycinate -->
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                     alt="Magnesium Glycinate">
+                <img src="Images/Product_MagGly.png" alt="Iodine Supplement">
                 <div class="product-card-content">
                     <div class="product-badge">Popular</div>
                     <h3>Magnesium Glycinate</h3>
@@ -133,8 +692,7 @@
 
             <!-- Liposomal Vitamin C -->
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                     alt="Liposomal Vitamin C">
+                <img src="Images/Product_VitC.png" alt="Iodine Supplement">
                 <div class="product-card-content">
                     <h3>Liposomal Vitamin C</h3>
                     <p class="price">R429.00</p>
@@ -154,8 +712,7 @@
 
             <!-- Circadian Light Therapy Lamp -->
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1595851797077-9cc4730b03a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                     alt="Circadian Light Therapy Lamp">
+                <img src="Images/Product_RedLight.png" alt="Iodine Supplement">
                 <div class="product-card-content">
                     <div class="product-badge">New</div>
                     <h3>Circadian Light Therapy Lamp</h3>
@@ -177,8 +734,7 @@
 
             <!-- Adrenal Support Complex -->
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                     alt="Adrenal Support Complex">
+                <img src="Images/Product_Adrenal.png" alt="Iodine Supplement">
                 <div class="product-card-content">
                     <h3>Adrenal Support Complex</h3>
                     <p class="price">R379.00</p>
@@ -199,8 +755,7 @@
 
             <!-- Gut Healing Protocol -->
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                     alt="Gut Healing Protocol">
+                <img src="Images/Product_Gut.png" alt="Iodine Supplement">
                 <div class="product-card-content">
                     <div class="product-badge">Bestseller</div>
                     <h3>Gut Healing Protocol</h3>
@@ -221,8 +776,7 @@
 
             <!-- PEMF Therapy Mat -->
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1595851797077-9cc4730b03a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                     alt="PEMF Therapy Mat">
+                <img src="Images/Product_Mat.png" alt="Iodine Supplement">
                 <div class="product-card-content">
                     <h3>PEMF Therapy Mat</h3>
                     <p class="price">R2,499.00</p>
@@ -242,8 +796,7 @@
 
             <!-- Mitochondrial Support Blend -->
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                     alt="Mitochondrial Support Blend">
+                <img src="Images/Product_Mito.png" alt="Iodine Supplement">
                 <div class="product-card-content">
                     <h3>Mitochondrial Support Blend</h3>
                     <p class="price">R419.00</p>
@@ -264,8 +817,7 @@
 
             <!-- Infrared Sauna Blanket -->
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1595851797077-9cc4730b03a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                     alt="Infrared Sauna Blanket">
+                <img src="Images/Product_Infra.png" alt="Iodine Supplement">
                 <div class="product-card-content">
                     <div class="product-badge">Sale</div>
                     <h3>Infrared Sauna Blanket</h3>
@@ -287,8 +839,7 @@
 
             <!-- Nervous System Tonic -->
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                     alt="Nervous System Tonic">
+                <img src="Images/Product_Nervous.png" alt="Iodine Supplement">
                 <div class="product-card-content">
                     <h3>Nervous System Tonic</h3>
                     <p class="price">R329.00</p>
@@ -308,8 +859,7 @@
 
             <!-- Lymphatic Drainage Kit -->
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1603665276881-5c2f2f4dcec3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                     alt="Lymphatic Drainage Kit">
+                <img src="Images/Product_Borax.png" alt="Iodine Supplement">
                 <div class="product-card-content">
                     <div class="product-badge">Popular</div>
                     <h3>Lymphatic Drainage Kit</h3>
@@ -330,8 +880,7 @@
 
             <!-- Red Light Therapy Device -->
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1595851797077-9cc4730b03a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                     alt="Red Light Therapy Device">
+                <img src="Images/Product_RedLight2.png" alt="Iodine Supplement">
                 <div class="product-card-content">
                     <div class="product-badge">Bestseller</div>
                     <h3>Red Light Therapy Device</h3>
@@ -353,8 +902,7 @@
 
             <!-- Advanced Face Serum -->
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1595851797077-9cc4730b03a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                     alt="Advanced Face Serum">
+                <img src="Images/Product_Serum.png" alt="Iodine Supplement">
                 <div class="product-card-content">
                     <div class="product-badge">Bestseller</div>
                     <h3>Advanced Face Serum</h3>
@@ -375,8 +923,7 @@
 
             <!-- Organic Body Butter -->
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1595851797077-9cc4730b03a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                     alt="Organic Body Butter">
+                <img src="Images/Product_Butter.png" alt="Iodine Supplement">
                 <div class="product-card-content">
                     <div class="product-badge">Bestseller</div>
                     <h3>Organic Body Butter</h3>
@@ -396,8 +943,7 @@
 
             <!-- Ultimate Hydrating Serum -->
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1595851797077-9cc4730b03a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                     alt="Ultimate Hydrating Serum">
+                <img src="Images/Product_Serum.png" alt="Iodine Supplement">
                 <div class="product-card-content">
                     <div class="product-badge">Bestseller</div>
                     <h3>Ultimate Hydrating Serum</h3>
@@ -418,8 +964,7 @@
 
             <!-- Organic Sun Block -->
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1595851797077-9cc4730b03a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                     alt="Organic Sun Block">
+                <img src="Images/Product_SunBlock.png" alt="Iodine Supplement">
                 <div class="product-card-content">
                     <div class="product-badge">Bestseller</div>
                     <h3>Organic Sun Block</h3>
@@ -439,8 +984,7 @@
 
             <!-- Whitening Tooth Powder -->
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1595851797077-9cc4730b03a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                     alt="Whitening Tooth Powder">
+                <img src="Images/Product_Tooth.png" alt="Iodine Supplement">
                 <div class="product-card-content">
                     <div class="product-badge">Bestseller</div>
                     <h3>Whitening Tooth Powder</h3>
@@ -461,8 +1005,7 @@
 
             <!-- Organic Deodorant -->
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1595851797077-9cc4730b03a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                     alt="Organic Deodorant">
+                <img src="Images/Product_Deo.png" alt="Iodine Supplement">
                 <div class="product-card-content">
                     <div class="product-badge">Bestseller</div>
                     <h3>Organic Deodorant</h3>
@@ -482,8 +1025,7 @@
 
             <!-- Organic Soap Bar -->
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1595851797077-9cc4730b03a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                     alt="Organic Soap Bar">
+                <img src="Images/Product_Soap.png" alt="Iodine Supplement">
                 <div class="product-card-content">
                     <div class="product-badge">Bestseller</div>
                     <h3>Organic Soap Bar</h3>
@@ -570,6 +1112,12 @@
                         <span id="button-spinner" class="spinner" style="display: none;"></span>
                     </button>
                 </form>
+
+                <!-- Debug Panel -->
+                <div class="debug-panel">
+                    <div class="debug-title">Connection Debug Information:</div>
+                    <div id="debug-info">No errors detected yet.</div>
+                </div>
             </div>
         </div>
     </div>
@@ -632,6 +1180,17 @@
 </footer>
 
 <script>
+  // Debug logging function
+  function debugLog(message, isError = false) {
+    const debugInfo = document.getElementById('debug-info');
+    const logEntry = document.createElement('div');
+    logEntry.className = isError ? 'debug-log' : 'debug-success';
+    logEntry.innerHTML = `[${new Date().toLocaleTimeString()}] ${message}`;
+    debugInfo.appendChild(logEntry);
+    debugInfo.scrollTop = debugInfo.scrollHeight;
+    console.log(message);
+  }
+
   // Add scroll event listener to trigger gradient shift
   window.addEventListener('scroll', function () {
     const badges = document.querySelectorAll('.product-badge');
@@ -655,7 +1214,37 @@
         badge.classList.remove('pulse');
       }, 3000);
     });
+
+    // Test the PHP connection on page load
+    testPHPConnection();
   });
+
+  // Test PHP connection
+  async function testPHPConnection() {
+    try {
+      debugLog("Testing connection to PHP script...");
+
+      // Test with a simple request
+      const response = await fetch('email-handler.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({test: "connection_test"})
+      });
+
+      if (response.ok) {
+        const data = await response.text();
+        debugLog("PHP script is accessible");
+        debugLog(`Response: ${data.substring(0, 100)}...`);
+      } else {
+        debugLog(`Server returned status: ${response.status}`, true);
+      }
+    } catch (error) {
+      debugLog(`Connection failed: ${error.message}`, true);
+      debugLog("Please check: 1) PHP file path 2) File permissions 3) CORS settings", true);
+    }
+  }
 
   // Shopping Cart Functionality
   document.addEventListener('DOMContentLoaded', function () {
@@ -807,10 +1396,13 @@
           admin_email: 'a.lawry98@gmail.com' // Send admin email to this address
         };
 
-        // Send order data to server (simulated)
+        debugLog("Sending order data to server...");
+
+        // Send order data to server
         const response = await sendOrderToServer(orderData);
 
         if (response.success) {
+          debugLog("Order successfully processed!");
           // Show success modal with order details
           document.getElementById('order-ref').textContent = orderData.order_ref;
           document.getElementById('customer-name').textContent = orderData.customer_name;
@@ -827,6 +1419,7 @@
 
       } catch (error) {
         console.error('Order processing error:', error);
+        debugLog(`Error: ${error.message}`, true);
         showNotification('Error: ' + error.message, true);
       } finally {
         // Reset button state
@@ -854,9 +1447,11 @@
       return cart.reduce((total, item) => total + (item.price * item.quantity), 0).toFixed(2);
     }
 
-// Replace the simulated function with this real implementation
+    // Real implementation for sending order data to server
     async function sendOrderToServer(orderData) {
       try {
+        debugLog("Sending order to: email-handler.php");
+
         const response = await fetch('email-handler.php', {
           method: 'POST',
           headers: {
@@ -868,16 +1463,24 @@
         const data = await response.json();
 
         if (!response.ok) {
+          debugLog(`Server error: ${data.error}`, true);
           throw new Error(data.error || 'Server error');
         }
 
+        debugLog("Order successfully sent to server!");
         return data;
       } catch (error) {
-        console.error('Error sending order:', error);
+        debugLog(`Network error: ${error.message}`, true);
+
+        // Provide specific troubleshooting advice based on error type
+        if (error.message.includes('Failed to fetch')) {
+          debugLog("This usually means: 1) Wrong file path 2) PHP errors 3) CORS issues", true);
+          debugLog("Please check that email-handler.php is in the same directory as this HTML file", true);
+        }
+
         throw new Error('Failed to connect to server. Please try again.');
       }
     }
-
 
     // Initialize cart
     updateCart();

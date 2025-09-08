@@ -8,6 +8,175 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap"
           rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Additional Styles for Enhanced Index Page */
+        .healing-principles {
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .principle-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .principle-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .principle-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-section {
+            background-color: #f8f9fa;
+            padding: 5rem 0;
+        }
+
+        .testimonials-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .testimonial:before {
+            content: """;
+            font-family: Georgia, serif;
+            font-size: 5rem;
+            color: var(--accent-color);
+            position: absolute;
+            top: -1rem;
+            left: 1rem;
+            opacity: 0.2;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .healing-image-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 3rem 0;
+        }
+
+        .gallery-item {
+            height: 250px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .stats-section {
+            background: linear-gradient(rgba(74, 111, 165, 0.8), rgba(22, 96, 136, 0.8)), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d15?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            padding: 1.5rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-family: var(--font-heading);
+        }
+
+        .cta-section {
+            padding: 5rem 0;
+            text-align: center;
+            background-color: white;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .healing-image-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
 </head>
 <body>
 <!-- Header and Navigation -->
@@ -43,6 +212,56 @@
     </div>
 </section>
 
+<!-- Healing Principles Section -->
+<section class="healing-principles section-padding">
+    <div class="container">
+        <h2 class="section-title">My Healing Approach</h2>
+        <p class="section-subtitle">Combining ancient wisdom with modern science for holistic wellness</p>
+
+        <div class="principles-grid">
+            <div class="principle-card">
+                <div class="principle-icon">
+                    <i class="fas fa-atom"></i>
+                </div>
+                <h3>Orthomolecular Medicine</h3>
+                <p>Using high-dose vitamins and minerals to correct biochemical imbalances and restore optimal health at the cellular level.</p>
+            </div>
+
+            <div class="principle-card">
+                <div class="principle-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3>Circadian Biology</h3>
+                <p>Aligning your daily rhythms with natural cycles to optimize hormone function, sleep, and overall wellbeing.</p>
+            </div>
+
+            <div class="principle-card">
+                <div class="principle-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3>Medical Astrology</h3>
+                <p>Understanding your unique constitutional strengths and vulnerabilities through planetary influences and birth chart analysis.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Healing Image Gallery -->
+<section class="container section-padding">
+    <h2 class="section-title">Pathways to Healing</h2>
+    <div class="healing-image-gallery">
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Meditation and Mindfulness">
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Natural Healing Therapies">
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Holistic Wellness">
+        </div>
+    </div>
+</section>
+
 <!-- About Section Preview -->
 <section id="about-preview" class="about-preview section-padding">
     <div class="container">
@@ -51,6 +270,7 @@
             <div class="about-preview-text">
                 <p>I am a health coach and professional astrologer specializing in medical astrology, orthomolecular protocols, and circadian biology to help people heal body, mind, and soul.</p>
                 <p>With 18 years of experience studying orthomolecular medicine, I provide alternative non-invasive healing approaches that work with your body's natural processes.</p>
+                <p>My journey began when conventional medicine failed to address my own health challenges. Through extensive research and application of orthomolecular principles, I discovered powerful natural healing methods that I now share with my clients.</p>
                 <a href="about.html" class="btn">Learn More About Me</a>
             </div>
             <div class="about-preview-image">
@@ -58,6 +278,31 @@
                     <i class="fas fa-user-circle"></i>
                     <p>Sarah Lawry</p>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section">
+    <div class="container">
+        <h2 class="section-title">Healing Journey By The Numbers</h2>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">18+</div>
+                <div class="stat-label">Years of Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Clients Helped</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">96%</div>
+                <div class="stat-label">Satisfaction Rate</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Published Books</div>
             </div>
         </div>
     </div>
@@ -71,22 +316,45 @@
             <div class="service-preview">
                 <i class="fas fa-star"></i>
                 <h3>Astrology Readings</h3>
-                <p>Birth charts, transits, and medical astrology to understand your unique constitution.</p>
+                <p>Birth charts, transits, and medical astrology to understand your unique constitution and life path.</p>
                 <a href="astrology.html">Learn More</a>
             </div>
 
             <div class="service-preview">
                 <i class="fas fa-heart"></i>
                 <h3>Health Consultations</h3>
-                <p>Orthomolecular protocols and lifestyle changes tailored to your individual needs.</p>
+                <p>Orthomolecular protocols and lifestyle changes tailored to your individual needs and health goals.</p>
                 <a href="consultation.html">Learn More</a>
             </div>
 
             <div class="service-preview">
                 <i class="fas fa-book"></i>
                 <h3>Books & Resources</h3>
-                <p>Educational materials on healing, astrology, and orthomolecular medicine.</p>
+                <p>Educational materials on healing, astrology, and orthomolecular medicine for your journey to wellness.</p>
                 <a href="books.html">Learn More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonial-section">
+    <div class="container">
+        <h2 class="section-title">Client Experiences</h2>
+        <div class="testimonials-container">
+            <div class="testimonial">
+                <p class="testimonial-text">Sarah's astrological guidance combined with her orthomolecular protocols completely transformed my health. I had struggled with fatigue for years, and within months of working with her, my energy levels were better than they had been in a decade.</p>
+                <p class="testimonial-author">- Jessica M., Cape Town</p>
+            </div>
+
+            <div class="testimonial">
+                <p class="testimonial-text">The medical astrology reading helped me understand why certain treatments weren't working for me. Sarah's recommendations were tailored specifically to my constitutional needs, and I've seen remarkable improvements in my digestive health.</p>
+                <p class="testimonial-author">- Michael T., Johannesburg</p>
+            </div>
+
+            <div class="testimonial">
+                <p class="testimonial-text">I was skeptical about astrology's role in health, but Sarah's approach is so grounded in science that it made complete sense. Her circadian biology advice has helped regulate my sleep, and I've never felt more balanced.</p>
+                <p class="testimonial-author">- Priya N., Durban</p>
             </div>
         </div>
     </div>
@@ -100,26 +368,40 @@
             <div class="blog-preview-post">
                 <h3>The Benefits of Iodine</h3>
                 <p class="blog-date">January 25, 2025</p>
-                <p>Iodine is an essential mineral that plays a crucial role in thyroid health, cognitive function, and overall metabolism...</p>
+                <p>Iodine is an essential mineral that plays a crucial role in thyroid health, cognitive function, and overall metabolism. Many people are deficient without realizing it...</p>
                 <a href="blog.html#iodine" class="read-more">Read More</a>
             </div>
 
             <div class="blog-preview-post">
                 <h3>Red Light Therapy Benefits</h3>
                 <p class="blog-date">January 18, 2025</p>
-                <p>Red light therapy uses low wavelength red light to treat skin issues, muscle pain, and other conditions...</p>
+                <p>Red light therapy uses low wavelength red light to treat skin issues, muscle pain, and other conditions by stimulating cellular energy production...</p>
                 <a href="blog.html#red-light-therapy" class="read-more">Read More</a>
             </div>
 
             <div class="blog-preview-post">
                 <h3>Circadian Rhythm Optimization</h3>
                 <p class="blog-date">January 11, 2025</p>
-                <p>Your circadian rhythm regulates your sleep-wake cycle and influences hormone production...</p>
+                <p>Your circadian rhythm regulates your sleep-wake cycle and influences hormone production, metabolism, and overall health. Learn how to align with your natural rhythms...</p>
                 <a href="blog.html#circadian-rhythm" class="read-more">Read More</a>
             </div>
         </div>
         <div class="blog-preview-cta">
             <a href="blog.html" class="btn">View All Blog Posts</a>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Begin Your Healing Journey Today</h2>
+            <p>Take the first step toward balanced health and spiritual alignment. Whether you're seeking astrological guidance, orthomolecular protocols, or both, I'm here to support your journey to wellness.</p>
+            <div class="cta-buttons">
+                <a href="consultation.html" class="btn">Book a Consultation</a>
+                <a href="about.html" class="btn btn-outline">Learn About My Approach</a>
+            </div>
         </div>
     </div>
 </section>
