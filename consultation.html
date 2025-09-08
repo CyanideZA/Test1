@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarah Lawry - Healing Services & Products</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a6fa5;
+            --accent-color: #ff6b6b;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --dark-bg: #2c3e50;
+            --light-text: #fff;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--light-bg);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .logo p {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1505506874110-6a7a69069a08?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--light-text);
+            text-align: center;
+            padding: 5rem 1rem;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Section Styles */
+        .section-padding {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--accent-color);
+            margin: 0.5rem auto;
+        }
+
+        /* Consultation Section */
+        .consultation-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .consultation-card {
+            background: var(--light-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .consultation-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .consultation-card.featured {
+            border: 2px solid var(--accent-color);
+        }
+
+        .consultation-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .consultation-card h3 i {
+            margin-right: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .consultation-card ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .consultation-card ul li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .consultation-card ul li:before {
+            content: '✓';
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn:hover {
+            background: #e55c5c;
+        }
+
+        /* Product Badge */
+        .product-badge {
+            position: absolute;
+            top: 20px;
+            right: -40px;
+            background: linear-gradient(135deg, var(--accent-color) 0%, #ff6b6b 30%, var(--accent-color) 70%, #ff8e8e 100%);
+            color: white;
+            padding: 5px 70px;
+            font-size: 1.0rem;
+            transform: rotate(45deg);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            background-size: 200% 200%;
+            transition: all 0.4s ease;
+            font-weight: bold;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .product-badge:hover {
+            background-position: 100% 100%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            transform: rotate(45deg) scale(1.05);
+        }
+
+        .product-badge.scroll-effect {
+            background-position: 50% 50%;
+            animation: gradientShift 2s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* Shop Section */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-card-content {
+            padding: 1.5rem;
+        }
+
+        .product-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            margin: 0.5rem 0;
+        }
+
+        .product-rating i {
+            color: #ffc107;
+            margin-right: 0.2rem;
+        }
+
+        .product-rating span {
+            margin-left: 0.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Cart Summary */
+        .cart-summary {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 90;
+            max-width: 300px;
+        }
+
+        .cart-summary h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .cart-items-list {
+            max-height: 200px;
+            overflow-y: auto;
+            margin-bottom: 0.5rem;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .cart-total {
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-align: right;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Calendar Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .calendar-modal {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            width: 90%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .calendar-header button {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .calendar-day {
+            text-align: center;
+            padding: 10px 0;
+            font-weight: bold;
+        }
+
+        .calendar-date {
+            text-align: center;
+            padding: 10px 0;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+
+        .calendar-date:hover {
+            background: var(--light-bg);
+        }
+
+        .calendar-date.selected {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .calendar-date.disabled {
+            color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .time-slots {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 1rem;
+        }
+
+        .time-slot {
+            padding: 10px;
+            text-align: center;
+            background: var(--light-bg);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .time-slot:hover {
+            background: #e0e0e0;
+        }
+
+        .time-slot.selected {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: var(--dark-bg);
+            color: var(--light-text);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--light-text);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: var(--light-text);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .consultation-options {
+                grid-template-columns: 1fr;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+
+            .cart-summary {
+                bottom: 0;
+                right: 0;
+                left: 0;
+                max-width: 100%;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Header and Navigation -->
+<header>
+    <div class="container header-container">
+        <div class="logo">
+            <h1>Intuitive Healing and Astrology</h1>
+            <p>Sarah Lawry</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="astrology.html">Astrology</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="consultation.html">Consultation</a></li>
+                <li><a href="shop.html">Shop</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <h2>Healing Services & Products</h2>
+        <p>Personalized consultations and tools to support your healing journey</p>
+    </div>
+</section>
+
+<!-- Consultation Section -->
+<section id="consultation" class="section-padding">
+    <div class="container">
+        <h2 class="section-title">Book a Consultation</h2>
+        <div class="consultation-content">
+            <div class="consultation-intro">
+                <p>I offer personalized consultations to help you achieve optimal health and wellbeing. Whether you're
+                    interested in astrology readings, health coaching, or a combination of both, I'm here to guide
+                    you.</p>
+            </div>
+
+            <div class="consultation-options">
+                <div class="consultation-card">
+                    <h3><i class="fas fa-star"></i> Astrology Reading</h3>
+                    <p class="price">$120</p>
+                    <ul>
+                        <li>Complete birth chart analysis</li>
+                        <li>Current transits and their influences</li>
+                        <li>Relationship compatibility (synastry)</li>
+                        <li>60-minute session</li>
+                        <li>Recording provided</li>
+                    </ul>
+                    <button class="btn add-service" data-service="Astrology Reading" data-price="120">Book Now</button>
+                </div>
+
+                <div class="consultation-card featured">
+                    <div class="popular-badge">Most Popular</div>
+                    <h3><i class="fas fa-heart"></i> Health & Astrology Combo</h3>
+                    <p class="price">$200</p>
+                    <ul>
+                        <li>Complete birth chart analysis</li>
+                        <li>Medical astrology assessment</li>
+                        <li>Personalized health protocol</li>
+                        <li>90-minute session</li>
+                        <li>Follow-up email support</li>
+                        <li>Recording provided</li>
+                    </ul>
+                    <button class="btn add-service" data-service="Health & Astrology Combo" data-price="200">Book Now</button>
+                </div>
+
+                <div class="consultation-card">
+                    <h3><i class="fas fa-apple-alt"></i> Health Consultation</h3>
+                    <p class="price">$150</p>
+                    <ul>
+                        <li>Health history review</li>
+                        <li>Orthomolecular protocol development</li>
+                        <li>Circadian biology optimization</li>
+                        <li>60-minute session</li>
+                        <li>2-week email follow-up</li>
+                    </ul>
+                    <button class="btn add-service" data-service="Health Consultation" data-price="150">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Shop Section -->
+<section class="shop-container section-padding">
+    <div class="container">
+        <h2 class="section-title">Healing Products</h2>
+        <div class="product-grid">
+            <!-- Iodine Supplement -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                     alt="Iodine Supplement">
+                <div class="product-card-content">
+                    <h3>Iodine Supplement</h3>
+                    <p class="price">R299.00</p>
+                    <p>High-quality iodine supplement for thyroid health</p>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>4.9/5 (98 reviews)</span>
+                    </div>
+                    <button class="btn add-to-cart" data-product="Iodine Supplement" data-price="299">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Methylene Blue -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                     alt="Methylene Blue">
+                <div class="product-card-content">
+                    <div class="product-badge">Bestseller</div>
+                    <h3>Methylene Blue</h3>
+                    <p class="price">R399.00</p>
+                    <p>Pharmaceutical grade methylene blue for cognitive support</p>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>4.9/5 (98 reviews)</span>
+                    </div>
+                    <button class="btn add-to-cart" data-product="Methylene Blue" data-price="399">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Additional products would go here -->
+        </div>
+    </div>
+</section>
+
+<!-- Cart Summary -->
+<div class="cart-summary">
+    <h3>Your Cart</h3>
+    <div class="cart-items-list">
+        <p class="empty-cart">Your cart is empty</p>
+    </div>
+    <div class="cart-total">
+        Total: <span id="cart-total">R0.00</span>
+    </div>
+    <a href="#checkout" class="btn" id="checkout-button">Proceed to Checkout</a>
+</div>
+
+<!-- Calendar Modal -->
+<div class="modal-overlay" id="calendar-modal">
+    <div class="calendar-modal">
+        <div class="calendar-header">
+            <h3 id="modal-service-title">Schedule Your Session</h3>
+            <button id="close-calendar">&times;</button>
+        </div>
+        <div id="calendar">
+            <!-- Calendar will be generated by JavaScript -->
+        </div>
+        <div id="time-selection" style="display: none;">
+            <h4>Select a Time</h4>
+            <div class="time-slots">
+                <div class="time-slot" data-time="09:00">9:00 AM</div>
+                <div class="time-slot" data-time="10:00">10:00 AM</div>
+                <div class="time-slot" data-time="11:00">11:00 AM</div>
+                <div class="time-slot" data-time="13:00">1:00 PM</div>
+                <div class="time-slot" data-time="14:00">2:00 PM</div>
+                <div class="time-slot" data-time="15:00">3:00 PM</div>
+            </div>
+            <button class="btn" id="confirm-booking" style="margin-top: 1rem; width: 100%;">Confirm Booking</button>
+        </div>
+    </div>
+</div>
+
+<!-- Checkout Section -->
+<section id="checkout" class="section-padding" style="background: var(--light-bg); display: none;">
+    <div class="container">
+        <h2 class="section-title">Checkout</h2>
+        <div class="checkout-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+            <div class="order-summary">
+                <h3>Order Summary</h3>
+                <div class="checkout-items">
+                    <!-- Items will be populated by JavaScript -->
+                </div>
+                <div class="checkout-total">
+                    <p>Total: <span id="checkout-total">R0.00</span></p>
+                </div>
+            </div>
+
+            <div class="checkout-form">
+                <h3>Customer Information</h3>
+                <form id="customer-info-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Shipping Address</label>
+                        <textarea id="address" name="address" required></textarea>
+                    </div>
+
+                    <h3>Payment Method</h3>
+                    <div class="payment-options">
+                        <label>
+                            <input type="radio" name="payment-method" value="stripe" checked>
+                            <span>Credit/Debit Card</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="payment-method" value="eft">
+                            <span>Bank Transfer (EFT)</span>
+                        </label>
+                    </div>
+
+                    <div id="stripe-payment-element">
+                        <div style="background: #f8f9fa; padding: 20px; border-radius: 5px; margin: 1rem 0;">
+                            <p>Secure card payment processed by Stripe</p>
+                            <div class="form-group">
+                                <label for="card-number">Card Number</label>
+                                <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <div class="form-group">
+                                    <label for="expiry">Expiry Date</label>
+                                    <input type="text" id="expiry" placeholder="MM/YY">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvc">CVC</label>
+                                    <input type="text" id="cvc" placeholder="123">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="eft-instructions" style="display: none;">
+                        <div style="background: #f8f9fa; padding: 20px; border-radius: 5px; margin: 1rem 0;">
+                            <h4>EFT Payment Instructions</h4>
+                            <p>Please make payment to:</p>
+                            <p><strong>Bank:</strong> Standard Bank</p>
+                            <p><strong>Account Name:</strong> Sarah Lawry Healing</p>
+                            <p><strong>Account Number:</strong> 0123456789</p>
+                            <p><strong>Branch Code:</strong> 123456</p>
+                            <p><strong>Reference:</strong> Your Name + Order #</p>
+                            <p>Email proof of payment to <strong>orders@sarahlawryhealing.com</strong></p>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Complete Purchase</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Intuitive Healing and Astrology</h3>
+                <p>Sarah Lawry</p>
+                <p>Johannesburg, South Africa</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>WhatsApp: +27 72 808 7795</p>
+                <p>Email: a.lawry98@gmail.com</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Follow</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Intuitive Healing and Astrology. All rights reserved.</p>
+            <p>Disclaimer: I am not a doctor, they don't get results!.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    let cart = [];
+    let currentService = null;
+
+    // Initialize calendar
+    initCalendar();
+
+    // Add service buttons event listeners
+    document.querySelectorAll('.add-service').forEach(button => {
+      button.addEventListener('click', function() {
+        const service = this.dataset.service;
+        const price = parseFloat(this.dataset.price);
+
+        currentService = {
+          type: 'service',
+          name: service,
+          price: price,
+          date: null,
+          time: null
+        };
+
+        // Show calendar modal
+        document.getElementById('modal-service-title').textContent = `Schedule Your ${service}`;
+        document.getElementById('calendar-modal').classList.add('active');
+      });
+    });
+
+    // Add to cart buttons event listeners
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', function() {
+        const product = this.dataset.product;
+        const price = parseFloat(this.dataset.price);
+
+        // Check if product already in cart
+        const existingItem = cart.find(item => item.name === product && item.type === 'product');
+
+        if (existingItem) {
+          existingItem.quantity += 1;
+        } else {
+          cart.push({
+            type: 'product',
+            name: product,
+            price: price,
+            quantity: 1
+          });
+        }
+
+        updateCart();
+        showNotification(`${product} added to cart!`);
+      });
+    });
+
+    // Close calendar modal
+    document.getElementById('close-calendar').addEventListener('click', function() {
+      document.getElementById('calendar-modal').classList.remove('active');
+      document.getElementById('time-selection').style.display = 'none';
+      currentService = null;
+    });
+
+    // Confirm booking button
+    document.getElementById('confirm-booking').addEventListener('click', function() {
+      if (currentService && currentService.date && currentService.time) {
+        cart.push({
+          type: 'service',
+          name: currentService.name,
+          price: currentService.price,
+          date: currentService.date,
+          time: currentService.time,
+          quantity: 1
+        });
+
+        updateCart();
+        showNotification(`${currentService.name} booked for ${currentService.date} at ${currentService.time}`);
+
+        // Close modal
+        document.getElementById('calendar-modal').classList.remove('active');
+        document.getElementById('time-selection').style.display = 'none';
+        currentService = null;
+      }
+    });
+
+    // Checkout button
+    document.getElementById('checkout-button').addEventListener('click', function(e) {
+      if (cart.length === 0) {
+        e.preventDefault();
+        showNotification('Your cart is empty!', true);
+        return;
+      }
+
+      // Show checkout section
+      document.getElementById('checkout').style.display = 'block';
+
+      // Update checkout items
+      updateCheckoutItems();
+
+      // Scroll to checkout
+      document.getElementById('checkout').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Payment method toggle
+    document.querySelectorAll('input[name="payment-method"]').forEach(radio => {
+      radio.addEventListener('change', function() {
+        if (this.value === 'stripe') {
+          document.getElementById('stripe-payment-element').style.display = 'block';
+          document.getElementById('eft-instructions').style.display = 'none';
+        } else {
+          document.getElementById('stripe-payment-element').style.display = 'none';
+          document.getElementById('eft-instructions').style.display = 'block';
+        }
+      });
+    });
+
+    // Form submission
+    document.getElementById('customer-info-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Get form data
+      const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        address: document.getElementById('address').value,
+        paymentMethod: document.querySelector('input[name="payment-method"]:checked').value,
+        orderItems: cart,
+        total: calculateTotal(),
+        orderDate: new Date().toLocaleDateString(),
+        orderNumber: generateOrderNumber()
+      };
+
+      // Send email notifications
+      sendEmailNotifications(formData);
+
+      // Show success message
+      showNotification('Order placed successfully! You will receive a confirmation email shortly.');
+
+      // Clear cart
+      cart = [];
+      updateCart();
+
+      // Hide checkout section
+      document.getElementById('checkout').style.display = 'none';
+
+      // Reset form
+      this.reset();
+    });
+
+    // Initialize calendar
+    function initCalendar() {
+      const calendarEl = document.getElementById('calendar');
+      const today = new Date();
+      const month = today.getMonth();
+      const year = today.getFullYear();
+
+      // Create calendar header
+      const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
+        'July', 'August', 'September', 'October', 'November', 'December'];
+
+      const header = document.createElement('div');
+      header.innerHTML = `<h4>${monthNames[month]} ${year}</h4>`;
+      calendarEl.appendChild(header);
+
+      // Create day headers
+      const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+      const daysHeader = document.createElement('div');
+      daysHeader.className = 'calendar-grid';
+
+      dayNames.forEach(day => {
+        const dayEl = document.createElement('div');
+        dayEl.className = 'calendar-day';
+        dayEl.textContent = day;
+        daysHeader.appendChild(dayEl);
+      });
+
+      calendarEl.appendChild(daysHeader);
+
+      // Create dates grid
+      const firstDay = new Date(year, month, 1).getDay();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+      const datesGrid = document.createElement('div');
+      datesGrid.className = 'calendar-grid';
+
+      // Add empty cells for days before the first day of the month
+      for (let i = 0; i < firstDay; i++) {
+        const emptyCell = document.createElement('div');
+        emptyCell.className = 'calendar-date disabled';
+        datesGrid.appendChild(emptyCell);
+      }
+
+      // Add cells for each day of the month
+      for (let i = 1; i <= daysInMonth; i++) {
+        const dateCell = document.createElement('div');
+        dateCell.className = 'calendar-date';
+        dateCell.textContent = i;
+
+        // Disable past dates
+        if (i < today.getDate() && month === today.getMonth()) {
+          dateCell.classList.add('disabled');
+        } else {
+          dateCell.addEventListener('click', function() {
+            // Remove selected class from all dates
+            document.querySelectorAll('.calendar-date').forEach(el => {
+              el.classList.remove('selected');
+            });
+
+            // Add selected class to clicked date
+            this.classList.add('selected');
+
+            // Store selected date
+            const selectedDate = `${year}-${(month + 1).toString().padStart(2, '0')}-${i.toString().padStart(2, '0')}`;
+            currentService.date = selectedDate;
+
+            // Show time selection
+            document.getElementById('time-selection').style.display = 'block';
+          });
+        }
+
+        datesGrid.appendChild(dateCell);
+      }
+
+      calendarEl.appendChild(datesGrid);
+
+      // Add time slot selection
+      document.querySelectorAll('.time-slot').forEach(slot => {
+        slot.addEventListener('click', function() {
+          // Remove selected class from all time slots
+          document.querySelectorAll('.time-slot').forEach(el => {
+            el.classList.remove('selected');
+          });
+
+          // Add selected class to clicked time slot
+          this.classList.add('selected');
+
+          // Store selected time
+          currentService.time = this.dataset.time;
+        });
+      });
+    }
+
+    // Update cart display
+    function updateCart() {
+      const cartItems = document.querySelector('.cart-items-list');
+      const cartTotal = document.getElementById('cart-total');
+      const checkoutButton = document.getElementById('checkout-button');
+
+      // Clear current cart items
+      cartItems.innerHTML = '';
+
+      // Add items to cart
+      let total = 0;
+
+      if (cart.length === 0) {
+        cartItems.innerHTML = '<p class="empty-cart">Your cart is empty</p>';
+        cartTotal.textContent = 'R0.00';
+        checkoutButton.style.opacity = '0.5';
+        checkoutButton.style.cursor = 'not-allowed';
+        return;
+      }
+
+      checkoutButton.style.opacity = '1';
+      checkoutButton.style.cursor = 'pointer';
+
+      cart.forEach((item, index) => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+
+        const cartItem = document.createElement('div');
+        cartItem.className = 'cart-item';
+
+        if (item.type === 'service') {
+          cartItem.innerHTML = `
+                            <div>
+                                <strong>${item.name}</strong>
+                                <p>${item.date} at ${item.time}</p>
+                            </div>
+                            <div>
+                                <p>R${itemTotal.toFixed(2)}</p>
+                                <button class="remove-item" data-index="${index}">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        `;
+        } else {
+          cartItem.innerHTML = `
+                            <div>
+                                <strong>${item.name}</strong>
+                                <p>R${item.price.toFixed(2)} x ${item.quantity}</p>
+                            </div>
+                            <div>
+                                <p>R${itemTotal.toFixed(2)}</p>
+                                <button class="remove-item" data-index="${index}">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        `;
+        }
+
+        cartItems.appendChild(cartItem);
+      });
+
+      // Update total
+      cartTotal.textContent = `R${total.toFixed(2)}`;
+
+      // Add event listeners to remove buttons
+      document.querySelectorAll('.remove-item').forEach(button => {
+        button.addEventListener('click', function() {
+          const index = parseInt(this.dataset.index);
+          const removedItem = cart[index].name;
+          cart.splice(index, 1);
+          updateCart();
+          showNotification(`${removedItem} removed from cart`);
+        });
+      });
+    }
+
+    // Update checkout items
+    function updateCheckoutItems() {
+      const checkoutItems = document.querySelector('.checkout-items');
+      const checkoutTotal = document.getElementById('checkout-total');
+
+      // Clear current checkout items
+      checkoutItems.innerHTML = '';
+
+      // Add items to checkout
+      let total = 0;
+
+      cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+
+        const checkoutItem = document.createElement('div');
+        checkoutItem.className = 'cart-item';
+
+        if (item.type === 'service') {
+          checkoutItem.innerHTML = `
+                            <div>
+                                <strong>${item.name}</strong>
+                                <p>${item.date} at ${item.time}</p>
+                            </div>
+                            <div>
+                                <p>R${itemTotal.toFixed(2)}</p>
+                            </div>
+                        `;
+        } else {
+          checkoutItem.innerHTML = `
+                            <div>
+                                <strong>${item.name}</strong>
+                                <p>R${item.price.toFixed(2)} x ${item.quantity}</p>
+                            </div>
+                            <div>
+                                <p>R${itemTotal.toFixed(2)}</p>
+                            </div>
+                        `;
+        }
+
+        checkoutItems.appendChild(checkoutItem);
+      });
+
+      // Update total
+      checkoutTotal.textContent = `R${total.toFixed(2)}`;
+    }
+
+    // Calculate total
+    function calculateTotal() {
+      return cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+    }
+
+    // Generate order number
+    function generateOrderNumber() {
+      return 'ORD-' + Date.now().toString().slice(-8);
+    }
+
+    // Send email notifications
+    function sendEmailNotifications(formData) {
+      // Format order items for email
+      const orderItemsHtml = formData.orderItems.map(item => {
+        if (item.type === 'service') {
+          return `<li>${item.name} - R${item.price} (Scheduled for ${item.date} at ${item.time})</li>`;
+        } else {
+          return `<li>${item.name} - R${item.price} x ${item.quantity}</li>`;
+        }
+      }).join('');
+
+      // Prepare email parameters
+      const emailParams = {
+        customer_name: formData.name,
+        customer_email: formData.email,
+        customer_phone: formData.phone,
+        customer_address: formData.address,
+        order_number: formData.orderNumber,
+        order_date: formData.orderDate,
+        order_items: orderItemsHtml,
+        order_total: 'R' + formData.total.toFixed(2),
+        payment_method: formData.paymentMethod
+      };
+
+      // Send email to customer
+      emailjs.send('YOUR_SERVICE_ID', 'YOUR_CUSTOMER_TEMPLATE_ID', emailParams)
+          .then(function(response) {
+            console.log('Customer email sent successfully!', response.status, response.text);
+          }, function(error) {
+            console.error('Failed to send customer email:', error);
+          });
+
+      // Send email to admin
+      emailjs.send('YOUR_SERVICE_ID', 'YOUR_ADMIN_TEMPLATE_ID', emailParams)
+          .then(function(response) {
+            console.log('Admin email sent successfully!', response.status, response.text);
+          }, function(error) {
+            console.error('Failed to send admin email:', error);
+          });
+    }
+
+    // Show notification
+    function showNotification(message, isError = false) {
+      // Create notification element if it doesn't exist
+      let notification = document.getElementById('notification');
+
+      if (!notification) {
+        notification = document.createElement('div');
+        notification.id = 'notification';
+        notification.style.cssText = `
+                        position: fixed;
+                        bottom: 20px;
+                        right: 20px;
+                        padding: 15px 20px;
+                        border-radius: 4px;
+                        background: ${isError ? '#ff6b6b' : '#4a6fa5'};
+                        color: white;
+                        z-index: 1000;
+                        opacity: 0;
+                        transition: opacity 0.3s;
+                    `;
+        document.body.appendChild(notification);
+      }
+
+      notification.textContent = message;
+      notification.style.opacity = '1';
+
+      setTimeout(() => {
+        notification.style.opacity = '0';
+      }, 3000);
+    }
+  });
+</script>
+</body>
+</html>
