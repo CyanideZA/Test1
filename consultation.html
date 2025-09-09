@@ -79,8 +79,8 @@
 
         nav ul li a {
             text-decoration: none;
-            color: var(--text-color);
-            font-weight: 600;
+            color: #333;
+            font-weight: 500;
             transition: color 0.3s;
         }
 
@@ -88,12 +88,51 @@
             color: var(--accent-color);
         }
 
-        .mobile-menu-btn {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
+        /* Mobile Menu Styles */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                padding: 1rem 0;
+                z-index: 999;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 0;
+                text-align: center;
+            }
+
+            nav ul li a {
+                display: block;
+                padding: 1rem;
+                border-bottom: 1px solid #f0f0f0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
         }
 
+        /* Desktop Menu Styles */
+        @media (min-width: 769px) {
+            nav ul {
+                display: flex !important; /* Override any display:none from mobile */
+            }
+
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1505506874110-6a7a69069a08?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
@@ -596,13 +635,6 @@
 
         /* Responsive Styles */
         @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
 
             .hero h2 {
                 font-size: 2rem;
@@ -625,7 +657,6 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="astrology.html">Astrology</a></li>
                 <li><a href="books.html">Books</a></li>
@@ -891,6 +922,31 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
+
+    // Mobile menu functionality
+    const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+    const navMenu = document.querySelector("nav ul");
+
+    if (mobileMenuBtn && navMenu) {
+      mobileMenuBtn.addEventListener("click", function() {
+        navMenu.classList.toggle("active");
+      });
+
+      // Close menu when links are clicked
+      navMenu.querySelectorAll("a").forEach(anchor => {
+        anchor.addEventListener("click", function() {
+          navMenu.classList.remove("active");
+        });
+      });
+    }
+
+    // Close menu on window resize (desktop)
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768 && navMenu) {
+        navMenu.classList.remove('active');
+      }
+    });
+
     let cart = [];
     let currentService = null;
 

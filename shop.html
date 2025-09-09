@@ -29,8 +29,9 @@
 
         /* Header Styles */
         header {
-            background: linear-gradient(135deg, #4a6fa5 0%, #166088 100%);
-            color: white;
+            background: linear-gradient(135deg, rgba(74, 111, 165, 0.8) 0%, rgba(22, 96, 136, 0.9) 20%, #ffffff 60% , #ffffff 100%);
+
+            color: #000000;
             padding: 15px 0;
             position: sticky;
             top: 0;
@@ -61,24 +62,64 @@
         }
 
         nav ul li {
-            margin-left: 25px;
+            margin-left: 1.5rem;
         }
 
         nav ul li a {
-            color: white;
             text-decoration: none;
+            color: #333;
             font-weight: 500;
-            transition: opacity 0.3s;
+            transition: color 0.3s;
         }
 
         nav ul li a:hover {
-            opacity: 0.8;
+            color: var(--accent-color);
         }
 
-        .mobile-menu-btn {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
+        /* Mobile Menu Styles */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                padding: 1rem 0;
+                z-index: 999;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 0;
+                text-align: center;
+            }
+
+            nav ul li a {
+                display: block;
+                padding: 1rem;
+                border-bottom: 1px solid #f0f0f0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        /* Desktop Menu Styles */
+        @media (min-width: 769px) {
+            nav ul {
+                display: flex !important; /* Override any display:none from mobile */
+            }
+
+            .mobile-menu-btn {
+                display: none;
+            }
         }
 
         /* Shop Hero */
@@ -119,7 +160,7 @@
             background: white;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
@@ -130,7 +171,7 @@
 
         .product-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
         }
 
         .product-card img {
@@ -527,14 +568,6 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
             .shop-hero h2 {
                 font-size: 2.2rem;
             }
@@ -583,7 +616,6 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="astrology.html">Astrology</a></li>
                 <li><a href="books.html">Books</a></li>
@@ -612,7 +644,6 @@
             <!-- Iodine Supplement -->
             <div class="product-card">
                 <img src="Images/Product_Iodine.png" alt="Iodine Supplement">
-                     alt="Iodine Supplement">
                 <div class="product-card-content">
                     <h3>Iodine Supplement</h3>
                     <p class="price">R299.00</p>
@@ -634,7 +665,6 @@
             <div class="product-card">
                 <img src="Images/Product_MB.png" alt="Iodine Supplement">
                 <div class="product-card-content">
-                    <div class="product-badge">Bestseller</div>
                     <h3>Methylene Blue</h3>
                     <p class="price">R399.00</p>
                     <p>Pharmaceutical grade methylene blue for cognitive support</p>
@@ -673,7 +703,6 @@
             <div class="product-card">
                 <img src="Images/Product_MagGly.png" alt="Iodine Supplement">
                 <div class="product-card-content">
-                    <div class="product-badge">Popular</div>
                     <h3>Magnesium Glycinate</h3>
                     <p class="price">R349.00</p>
                     <p>High absorption magnesium for better sleep and muscle relaxation</p>
@@ -714,7 +743,6 @@
             <div class="product-card">
                 <img src="Images/Product_RedLight.png" alt="Iodine Supplement">
                 <div class="product-card-content">
-                    <div class="product-badge">New</div>
                     <h3>Circadian Light Therapy Lamp</h3>
                     <p class="price">R899.00</p>
                     <p>Regulate your sleep-wake cycle and boost energy levels</p>
@@ -757,7 +785,6 @@
             <div class="product-card">
                 <img src="Images/Product_Gut.png" alt="Iodine Supplement">
                 <div class="product-card-content">
-                    <div class="product-badge">Bestseller</div>
                     <h3>Gut Healing Protocol</h3>
                     <p class="price">R549.00</p>
                     <p>Complete 30-day program for digestive health restoration</p>
@@ -819,7 +846,6 @@
             <div class="product-card">
                 <img src="Images/Product_Infra.png" alt="Iodine Supplement">
                 <div class="product-card-content">
-                    <div class="product-badge">Sale</div>
                     <h3>Infrared Sauna Blanket</h3>
                     <p class="price">R1,799.00</p>
                     <p>Detoxify and relax with portable infrared therapy</p>
@@ -861,7 +887,6 @@
             <div class="product-card">
                 <img src="Images/Product_Borax.png" alt="Iodine Supplement">
                 <div class="product-card-content">
-                    <div class="product-badge">Popular</div>
                     <h3>Lymphatic Drainage Kit</h3>
                     <p class="price">R499.00</p>
                     <p>Complete set for improving circulation and detoxification</p>
@@ -882,7 +907,6 @@
             <div class="product-card">
                 <img src="Images/Product_RedLight2.png" alt="Iodine Supplement">
                 <div class="product-card-content">
-                    <div class="product-badge">Bestseller</div>
                     <h3>Red Light Therapy Device</h3>
                     <p class="price">R1,899.00</p>
                     <p>Portable red light therapy device for circadian rhythm support</p>
@@ -904,7 +928,6 @@
             <div class="product-card">
                 <img src="Images/Product_Serum.png" alt="Iodine Supplement">
                 <div class="product-card-content">
-                    <div class="product-badge">Bestseller</div>
                     <h3>Advanced Face Serum</h3>
                     <p class="price">R1,299.00</p>
                     <p>Anti-aging serum to hydrate and rejuvenate your skin.</p>
@@ -925,7 +948,6 @@
             <div class="product-card">
                 <img src="Images/Product_Butter.png" alt="Iodine Supplement">
                 <div class="product-card-content">
-                    <div class="product-badge">Bestseller</div>
                     <h3>Organic Body Butter</h3>
                     <p class="price">R799.00</p>
                     <p>Rich, organic body butter for deep moisturization and soft skin.</p>
@@ -945,7 +967,6 @@
             <div class="product-card">
                 <img src="Images/Product_Serum.png" alt="Iodine Supplement">
                 <div class="product-card-content">
-                    <div class="product-badge">Bestseller</div>
                     <h3>Ultimate Hydrating Serum</h3>
                     <p class="price">R999.00</p>
                     <p>Hydrating serum for smooth, refreshed, and glowing skin.</p>
@@ -966,7 +987,6 @@
             <div class="product-card">
                 <img src="Images/Product_SunBlock.png" alt="Iodine Supplement">
                 <div class="product-card-content">
-                    <div class="product-badge">Bestseller</div>
                     <h3>Organic Sun Block</h3>
                     <p class="price">R499.00</p>
                     <p>Natural sunblock to protect your skin from harmful UV rays.</p>
@@ -986,7 +1006,6 @@
             <div class="product-card">
                 <img src="Images/Product_Tooth.png" alt="Iodine Supplement">
                 <div class="product-card-content">
-                    <div class="product-badge">Bestseller</div>
                     <h3>Whitening Tooth Powder</h3>
                     <p class="price">R199.00</p>
                     <p>Whitening tooth powder for a bright and fresh smile.</p>
@@ -1007,7 +1026,6 @@
             <div class="product-card">
                 <img src="Images/Product_Deo.png" alt="Iodine Supplement">
                 <div class="product-card-content">
-                    <div class="product-badge">Bestseller</div>
                     <h3>Organic Deodorant</h3>
                     <p class="price">R179.00</p>
                     <p>Natural deodorant with a fresh, lasting fragrance.</p>
@@ -1027,7 +1045,6 @@
             <div class="product-card">
                 <img src="Images/Product_Soap.png" alt="Iodine Supplement">
                 <div class="product-card-content">
-                    <div class="product-badge">Bestseller</div>
                     <h3>Organic Soap Bar</h3>
                     <p class="price">R89.00</p>
                     <p>Gentle, organic soap bar for healthy and smooth skin.</p>
@@ -1191,28 +1208,30 @@
     console.log(message);
   }
 
-  // Add scroll event listener to trigger gradient shift
-  window.addEventListener('scroll', function () {
-    const badges = document.querySelectorAll('.product-badge');
-    const scrollPosition = window.scrollY;
-
-    badges.forEach(badge => {
-      if (scrollPosition > 100) {
-        badge.classList.add('scroll-effect');
-      } else {
-        badge.classList.remove('scroll-effect');
-      }
-    });
-  });
-
   // Optional: Add pulse effect on page load
   document.addEventListener('DOMContentLoaded', function () {
-    const badges = document.querySelectorAll('.product-badge');
-    badges.forEach(badge => {
-      badge.classList.add('pulse');
-      setTimeout(() => {
-        badge.classList.remove('pulse');
-      }, 3000);
+    // Mobile menu functionality
+    const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+    const navMenu = document.querySelector("nav ul");
+
+    if (mobileMenuBtn && navMenu) {
+      mobileMenuBtn.addEventListener("click", function() {
+        navMenu.classList.toggle("active");
+      });
+
+      // Close menu when links are clicked
+      navMenu.querySelectorAll("a").forEach(anchor => {
+        anchor.addEventListener("click", function() {
+          navMenu.classList.remove("active");
+        });
+      });
+    }
+
+    // Close menu on window resize (desktop)
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768 && navMenu) {
+        navMenu.classList.remove('active');
+      }
     });
 
     // Test the PHP connection on page load

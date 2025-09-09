@@ -107,7 +107,9 @@
         }
 
         .stats-section {
-            background: linear-gradient(rgba(74, 111, 165, 0.8), rgba(22, 96, 136, 0.8)), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d15?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+            background: linear-gradient(rgba(74, 111, 165, 0.85), rgba(22, 96, 136, 0.85)),
+            url('https://images.unsplash.com/photo-1576091160399-112ba8d25d15?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80')
+            no-repeat center center/cover;
             color: white;
             text-align: center;
             padding: 4rem 0;
@@ -115,13 +117,42 @@
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
 
         .stat-item {
-            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 1rem;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+        }
+
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1rem;
+            filter: brightness(0) invert(1); /* makes icons white */
+            opacity: 0.9;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            margin-top: 0.5rem;
         }
 
         .stat-number {
@@ -189,7 +220,6 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="astrology.html">Astrology</a></li>
                 <li><a href="books.html">Books</a></li>
@@ -271,7 +301,6 @@
                 <p>I am a health coach and professional astrologer specializing in medical astrology, orthomolecular protocols, and circadian biology to help people heal body, mind, and soul.</p>
                 <p>With 18 years of experience studying orthomolecular medicine, I provide alternative non-invasive healing approaches that work with your body's natural processes.</p>
                 <p>My journey began when conventional medicine failed to address my own health challenges. Through extensive research and application of orthomolecular principles, I discovered powerful natural healing methods that I now share with my clients.</p>
-                <a href="about.html" class="btn">Learn More About Me</a>
             </div>
             <div class="about-preview-image">
                 <div class="image-placeholder">
@@ -288,25 +317,35 @@
     <div class="container">
         <h2 class="section-title">Healing Journey By The Numbers</h2>
         <div class="stats-grid">
+
             <div class="stat-item">
-                <div class="stat-number">18+</div>
+                <img src="https://cdn-icons-png.flaticon.com/512/1037/1037970.png" alt="Experience Icon" class="stat-icon">
+                <div class="stat-number">20+</div>
                 <div class="stat-label">Years of Experience</div>
             </div>
+
             <div class="stat-item">
+                <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="DNA Icon" class="stat-icon">
                 <div class="stat-number">500+</div>
                 <div class="stat-label">Clients Helped</div>
             </div>
+
             <div class="stat-item">
+                <img src="https://cdn-icons-png.flaticon.com/512/1828/1828614.png" alt=Satisfaction Icon" class="stat-icon">
                 <div class="stat-number">96%</div>
                 <div class="stat-label">Satisfaction Rate</div>
             </div>
+
             <div class="stat-item">
+                <img src="https://cdn-icons-png.flaticon.com/512/29/29302.png" alt="Books Icon" class="stat-icon">
                 <div class="stat-number">3</div>
                 <div class="stat-label">Published Books</div>
             </div>
+
         </div>
     </div>
 </section>
+
 
 <!-- Services Preview Section -->
 <section id="services-preview" class="services-preview section-padding">
@@ -336,7 +375,6 @@
         </div>
     </div>
 </section>
-
 <!-- Testimonials Section -->
 <section class="testimonial-section">
     <div class="container">
@@ -359,38 +397,95 @@
         </div>
     </div>
 </section>
-
-<!-- Blog Preview Section -->
-<section id="blog-preview" class="blog-preview section-padding">
+<!-- Orthomolecular Section -->
+<section id="orthomolecular" class="orthomolecular section-padding">
     <div class="container">
-        <h2 class="section-title">Latest from the Blog</h2>
-        <div class="blog-preview-content">
-            <div class="blog-preview-post">
-                <h3>The Benefits of Iodine</h3>
-                <p class="blog-date">January 25, 2025</p>
-                <p>Iodine is an essential mineral that plays a crucial role in thyroid health, cognitive function, and overall metabolism. Many people are deficient without realizing it...</p>
-                <a href="blog.html#iodine" class="read-more">Read More</a>
+        <h2 class="section-title">Orthomolecular Protocols and Nutrition</h2>
+        <div class="ortho-content">
+            <div class="ortho-card">
+                <h3><i class="fas fa-apple-alt"></i> Vitamins, Minerals and Macros</h3>
+                <p>The body could fall into a state of dis-ease or injury for all sorts of reasons. Given the correct
+                    nutrition, minerals and living conditions, the body has the ability to make astounding
+                    recoveries.</p>
             </div>
 
-            <div class="blog-preview-post">
-                <h3>Red Light Therapy Benefits</h3>
-                <p class="blog-date">January 18, 2025</p>
-                <p>Red light therapy uses low wavelength red light to treat skin issues, muscle pain, and other conditions by stimulating cellular energy production...</p>
-                <a href="blog.html#red-light-therapy" class="read-more">Read More</a>
+            <div class="ortho-card">
+                <h3><i class="fas fa-flask"></i> Elements and Compounds</h3>
+                <p>Iodine, Methylene Blue, Castor Oil and other compounds can be extremely beneficial to the body in
+                    many capacities when used appropriately.</p>
             </div>
 
-            <div class="blog-preview-post">
-                <h3>Circadian Rhythm Optimization</h3>
-                <p class="blog-date">January 11, 2025</p>
-                <p>Your circadian rhythm regulates your sleep-wake cycle and influences hormone production, metabolism, and overall health. Learn how to align with your natural rhythms...</p>
-                <a href="blog.html#circadian-rhythm" class="read-more">Read More</a>
+            <div class="ortho-card">
+                <h3><i class="fas fa-ban"></i> Enemies to Health</h3>
+                <p>Seed oils, processed food, alcohol, smoking, and unrelenting stress are among the biggest enemies to
+                    optimal health that we often overlook.</p>
             </div>
-        </div>
-        <div class="blog-preview-cta">
-            <a href="blog.html" class="btn">View All Blog Posts</a>
+
+            <div class="ortho-card">
+                <h3><i class="fas fa-tint"></i> Water Quality</h3>
+                <p>The type of water we drink makes a huge difference to our health. Investing in a good water
+                    filtration system is essential for reducing toxins like fluoride.</p>
+            </div>
+
+            <div class="ortho-card">
+                <h3><i class="fas fa-weight"></i> Exercise at Any Age</h3>
+                <p>Finding exercise you enjoy is key. Lifting weights is particularly beneficial for maintaining
+                    strength and vitality throughout life.</p>
+            </div>
+
+            <div class="ortho-card">
+                <h3><i class="fas fa-utensils"></i> Diet and Nutrition</h3>
+                <p>What we swallow is critically important. The first question when addressing health should always be
+                    "what are you eating and drinking?"</p>
+            </div>
         </div>
     </div>
 </section>
+
+<!-- Circadian Biology Section -->
+<section id="circadian" class="circadian section-padding">
+    <div class="container">
+        <h2 class="section-title">Circadian Biology & Environment</h2>
+        <div class="circadian-content">
+            <div class="circadian-item">
+                <h3><i class="fas fa-sun"></i> Natural Sunlight</h3>
+                <p>The effects of natural sunlight on the body and its healing abilities. How to manage and reduce Blue
+                    light toxicity for health and healing.</p>
+            </div>
+
+            <div class="circadian-item">
+                <h3><i class="fas fa-cloud-sun"></i> The Sun's Healing Abilities</h3>
+                <p>The scourge of toxic sunscreens and sunglasses on our health. We are designed to be exposed to the
+                    sun - the key is not to get burned.</p>
+            </div>
+
+            <div class="circadian-item">
+                <h3><i class="fas fa-skull-crossbones"></i> Environmental Toxins</h3>
+                <p>Fluoride, plastic, chemicals, skin care products, and deodorants can carry significant toxic loads
+                    that affect our health.</p>
+            </div>
+
+            <div class="circadian-item">
+                <h3><i class="fas fa-seedling"></i> Benefits of Environmental Change</h3>
+                <p>As you make changes to your environment, you'll notice differences in your body - more vitality,
+                    better energy, and improved wellbeing.</p>
+            </div>
+
+            <div class="circadian-item">
+                <h3><i class="fas fa-water"></i> Water and Healing</h3>
+                <p>Water quality matters for healing. Drinking from glass instead of plastic and using good filtration
+                    systems makes a significant difference.</p>
+            </div>
+
+            <div class="circadian-item">
+                <h3><i class="fas fa-feather-alt"></i> Grounding the Body</h3>
+                <p>Connecting with the earth has calming effects and helps us feel connected and whole. Grounding mats
+                    and practices can mitigate EMF exposure.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 <!-- Call to Action Section -->
 <section class="cta-section">
@@ -400,7 +495,6 @@
             <p>Take the first step toward balanced health and spiritual alignment. Whether you're seeking astrological guidance, orthomolecular protocols, or both, I'm here to support your journey to wellness.</p>
             <div class="cta-buttons">
                 <a href="consultation.html" class="btn">Book a Consultation</a>
-                <a href="about.html" class="btn btn-outline">Learn About My Approach</a>
             </div>
         </div>
     </div>
