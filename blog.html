@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Sarah Lawry - Intuitive Healing and Astrology</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap"
-          rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<!-- Header and Navigation -->
+
 <header>
     <div class="container">
         <div class="logo">
@@ -41,83 +40,115 @@
     </div>
 </section>
 
-<!-- Blog Section -->
 <section id="blog" class="blog section-padding">
     <div class="container">
         <h2 class="section-title">Blog</h2>
-        <div class="blog-content">
-            <p class="blog-intro">Here I write weekly BLOGS on different subjects, this links up to my Instagram and
-                Facebook page. I write about health, fitness, and healing topics.</p>
+        <p class="blog-intro">Here I write weekly blogs on health, fitness, and healing topics. Expand any post to read the full article.</p>
 
-            <div class="latest-blog">
-                <h3>Latest Blog</h3>
-                <div class="blog-post" id="iodine">
-                    <h4>The Benefits of Iodine</h4>
-                    <p class="blog-date">January 25, 2025</p>
-                    <p>Iodine is an essential mineral that plays a crucial role in thyroid health, cognitive function,
-                        and overall metabolism. Many people are deficient in iodine due to modern dietary
-                        practices...</p>
-                    <a href="#iodine" class="read-more">Read More</a>
-                </div>
+        <!-- Blog Post Template -->
+        <div class="blog-post" id="iodine">
+            <h4>The Benefits of Iodine</h4>
+            <p class="blog-date">January 25, 2025</p>
+            <p class="blog-excerpt">
+                Iodine is an essential mineral that plays a crucial role in thyroid health, cognitive function, and overall metabolism...
+            </p>
+            <div class="blog-full-content">
+                <p>Iodine supports thyroid hormone synthesis, regulating metabolism and energy levels. Deficiency can lead to fatigue, goiter, and cognitive impairment.</p>
+                <p>It is abundant in seaweed, seafood, dairy, and fortified salt. Supplements may be considered under professional guidance.</p>
+                <p>Integrating iodine-rich foods and monitoring intake helps maintain optimal hormonal balance, mental clarity, and overall wellness. Regular checkups with your healthcare provider ensure you maintain healthy iodine levels and avoid potential toxicity.</p>
             </div>
+            <button class="read-more-btn">Read More</button>
+        </div>
 
-            <!-- Additional Blog Posts -->
-            <div class="blog-posts">
-                <div id="red-light-therapy" class="blog-post">
-                    <h4>Red Light Therapy Benefits</h4>
-                    <p class="blog-date">January 18, 2025</p>
-                    <p>Red light therapy uses low wavelength red light to treat skin issues, muscle pain, and other conditions. Research shows it can stimulate collagen production, reduce inflammation, and accelerate wound healing...</p>
-                    <a href="#red-light-therapy" class="read-more">Read More</a>
-                </div>
-
-                <div id="circadian-rhythm" class="blog-post">
-                    <h4>Circadian Rhythm Optimization</h4>
-                    <p class="blog-date">January 11, 2025</p>
-                    <p>Your circadian rhythm regulates your sleep-wake cycle and influences hormone production. Aligning with natural light patterns, maintaining consistent sleep schedules, and avoiding blue light at night can significantly improve your health and energy levels...</p>
-                    <a href="#circadian-rhythm" class="read-more">Read More</a>
-                </div>
-
-                <div id="nutrition-mental-health" class="blog-post">
-                    <h4>Nutrition for Mental Health</h4>
-                    <p class="blog-date">January 4, 2025</p>
-                    <p>The gut-brain connection is powerful. Omega-3 fatty acids, probiotics, B vitamins, and antioxidant-rich foods can significantly impact mood and cognitive function. What we eat directly influences neurotransmitter production and inflammation levels...</p>
-                    <a href="#nutrition-mental-health" class="read-more">Read More</a>
-                </div>
-
-                <div id="astrology-health" class="blog-post">
-                    <h4>Astrology and Health Connections</h4>
-                    <p class="blog-date">December 28, 2024</p>
-                    <p>While not scientifically proven, many ancient healing traditions connect planetary movements with bodily systems. Understanding these symbolic connections can offer insights into our natural rhythms and potential health tendencies...</p>
-                    <a href="#astrology-health" class="read-more">Read More</a>
-                </div>
-
-                <div id="detox-protocols" class="blog-post">
-                    <h4>Detoxification Protocols</h4>
-                    <p class="blog-date">December 21, 2024</p>
-                    <p>Effective detoxification supports the body's natural elimination processes. Focus on supporting liver function with cruciferous vegetables, staying hydrated, sweating regularly, and reducing toxin exposure. Remember that sustainable detox is a lifestyle, not a quick fix...</p>
-                    <a href="#detox-protocols" class="read-more">Read More</a>
-                </div>
+        <div class="blog-post" id="red-light-therapy">
+            <h4>Red Light Therapy Benefits</h4>
+            <p class="blog-date">January 18, 2025</p>
+            <p class="blog-excerpt">
+                Red light therapy uses low wavelength red light to treat skin issues, muscle pain, and other conditions...
+            </p>
+            <div class="blog-full-content">
+                <p>Red light therapy stimulates cellular energy (ATP) production, enhancing collagen formation and reducing inflammation. Regular sessions can accelerate wound healing, reduce pain, and improve skin tone.</p>
+                <p>It has applications for joint health, muscle recovery, and even mood enhancement. Combining red light therapy with proper nutrition and exercise can significantly boost overall wellness.</p>
+                <p>Clinical studies support its role in skin rejuvenation, scar reduction, and mitigating chronic pain. Integrating it into your healing routine can be transformative when done consistently.</p>
             </div>
+            <button class="read-more-btn">Read More</button>
+        </div>
 
-            <div class="blog-archive">
-                <h3>Blog Archive</h3>
-                <div class="search-box">
-                    <input type="text" placeholder="Search blog topics...">
-                    <button><i class="fas fa-search"></i></button>
-                </div>
-                <div class="archive-list">
-                    <a href="#red-light-therapy">Red Light Therapy Benefits</a>
-                    <a href="#circadian-rhythm">Circadian Rhythm Optimization</a>
-                    <a href="#nutrition-mental-health">Nutrition for Mental Health</a>
-                    <a href="#astrology-health">Astrology and Health Connections</a>
-                    <a href="#detox-protocols">Detoxification Protocols</a>
-                </div>
+        <div class="blog-post" id="circadian-rhythm">
+            <h4>Circadian Rhythm Optimization</h4>
+            <p class="blog-date">January 11, 2025</p>
+            <p class="blog-excerpt">
+                Your circadian rhythm regulates your sleep-wake cycle and influences hormone production...
+            </p>
+            <div class="blog-full-content">
+                <p>Aligning sleep-wake cycles with natural sunlight supports hormonal balance, improves sleep quality, and enhances energy levels. Morning sunlight exposure and avoiding blue light in the evening are key practices.</p>
+                <p>Consistency in sleep timing, balanced meals, and movement throughout the day strengthen circadian rhythm signaling. This has profound effects on metabolism, mood, and cognitive performance.</p>
+                <p>Supplementing with magnesium, limiting caffeine after noon, and maintaining a sleep-friendly environment contribute to better circadian health, helping you wake refreshed and maintain mental clarity.</p>
+            </div>
+            <button class="read-more-btn">Read More</button>
+        </div>
+
+        <div class="blog-post" id="nutrition-mental-health">
+            <h4>Nutrition for Mental Health</h4>
+            <p class="blog-date">January 4, 2025</p>
+            <p class="blog-excerpt">
+                The gut-brain connection is powerful. Omega-3 fatty acids, probiotics, and antioxidant-rich foods can significantly impact mood...
+            </p>
+            <div class="blog-full-content">
+                <p>Omega-3s support neurotransmitter function, B vitamins aid in cognitive processing, and antioxidants reduce neuroinflammation. Probiotics balance gut microbiota, which directly influences brain chemistry.</p>
+                <p>A diet rich in colorful vegetables, fruits, nuts, and whole grains supports mental resilience. Avoiding processed sugars and inflammatory foods is equally critical for mood stability and cognitive performance.</p>
+                <p>Integrating mindful eating, hydration, and consistent meal timing further optimizes the gut-brain axis, supporting long-term mental clarity and emotional balance.</p>
+            </div>
+            <button class="read-more-btn">Read More</button>
+        </div>
+
+        <div class="blog-post" id="astrology-health">
+            <h4>Astrology and Health Connections</h4>
+            <p class="blog-date">December 28, 2024</p>
+            <p class="blog-excerpt">
+                Many ancient healing traditions connect planetary movements with bodily systems...
+            </p>
+            <div class="blog-full-content">
+                <p>Astrology provides symbolic insights into natural rhythms and potential health tendencies. Certain planetary alignments have been associated with cycles in energy, mood, and bodily function.</p>
+                <p>While not scientifically proven, integrating astrology with holistic practices can increase self-awareness, guide wellness planning, and support mindfulness in health routines.</p>
+                <p>Understanding your astrological tendencies can help identify optimal timing for lifestyle adjustments, healing practices, and energy work, enhancing personal well-being and life balance.</p>
+            </div>
+            <button class="read-more-btn">Read More</button>
+        </div>
+
+        <div class="blog-post" id="detox-protocols">
+            <h4>Detoxification Protocols</h4>
+            <p class="blog-date">December 21, 2024</p>
+            <p class="blog-excerpt">
+                Effective detoxification supports the body's natural elimination processes...
+            </p>
+            <div class="blog-full-content">
+                <p>Supporting liver function, staying hydrated, and regular sweating are key elements in detoxification. Reducing exposure to environmental toxins enhances the body's natural cleansing processes.</p>
+                <p>Incorporating cruciferous vegetables, herbs like milk thistle, and mindful supplementation can further support liver health. Lifestyle habits like adequate sleep and stress reduction are essential for sustainable detox.</p>
+                <p>Detoxification is most effective when treated as a continuous, holistic lifestyle approach rather than a short-term fad, promoting long-term vitality, cellular health, and overall wellness.</p>
+            </div>
+            <button class="read-more-btn">Read More</button>
+        </div>
+
+        <!-- Blog Archive -->
+        <div class="blog-archive">
+            <h3>Blog Archive</h3>
+            <div class="search-box">
+                <input type="text" placeholder="Search blog topics...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="archive-list">
+                <a href="#iodine">The Benefits of Iodine</a>
+                <a href="#red-light-therapy">Red Light Therapy Benefits</a>
+                <a href="#circadian-rhythm">Circadian Rhythm Optimization</a>
+                <a href="#nutrition-mental-health">Nutrition for Mental Health</a>
+                <a href="#astrology-health">Astrology and Health Connections</a>
+                <a href="#detox-protocols">Detoxification Protocols</a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Footer -->
 <footer>
     <div class="container">
         <div class="footer-content">
@@ -126,13 +157,11 @@
                 <p>Sarah Lawry</p>
                 <p>Johannesburg, South Africa</p>
             </div>
-
             <div class="footer-section">
                 <h3>Contact</h3>
                 <p>WhatsApp: +27 72 808 7795</p>
                 <p>Email: info@intuitivehealing.com</p>
             </div>
-
             <div class="footer-section">
                 <h3>Follow</h3>
                 <div class="social-links">
@@ -142,7 +171,6 @@
                 </div>
             </div>
         </div>
-
         <div class="footer-bottom">
             <p>&copy; 2025 Intuitive Healing and Astrology. All rights reserved.</p>
             <p>Disclaimer: I am not a doctor, they don't get results!.</p>
@@ -150,6 +178,29 @@
     </div>
 </footer>
 
-<script src="script.js"></script>
+<script>
+  // Mobile Menu Toggle
+  const mobileBtn = document.querySelector(".mobile-menu-btn");
+  const navMenu = document.querySelector("header nav ul");
+  mobileBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
+
+  // Expand/Collapse Blog Posts
+  document.querySelectorAll(".read-more-btn").forEach(button => {
+    button.addEventListener("click", () => {
+      const post = button.closest(".blog-post");
+      const content = post.querySelector(".blog-full-content");
+      if(content.style.display === "block") {
+        content.style.display = "none";
+        button.textContent = "Read More";
+      } else {
+        content.style.display = "block";
+        button.textContent = "Read Less";
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
