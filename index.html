@@ -8,223 +8,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap"
           rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Additional Styles for Enhanced Index Page */
-        .healing-principles {
-            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
-            padding: 5rem 0;
-            text-align: center;
-        }
-
-        .principles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .principle-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .principle-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .principle-icon {
-            font-size: 2.5rem;
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-        }
-
-        .testimonial-section {
-            background-color: #f8f9fa;
-            padding: 5rem 0;
-        }
-
-        .testimonials-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .testimonial {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            margin: 1.5rem 0;
-            position: relative;
-        }
-
-        .testimonial:before {
-            content: """;
-            font-family: Georgia, serif;
-            font-size: 5rem;
-            color: var(--accent-color);
-            position: absolute;
-            top: -1rem;
-            left: 1rem;
-            opacity: 0.2;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 1rem;
-        }
-
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--secondary-color);
-        }
-
-        .healing-image-gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin: 3rem 0;
-        }
-
-        .gallery-item {
-            height: 250px;
-            border-radius: 10px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-
-        .stats-section {
-            background: linear-gradient(rgba(74, 111, 165, 0.85), rgba(22, 96, 136, 0.85)),
-            url('https://images.unsplash.com/photo-1576091160399-112ba8d25d15?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80')
-            no-repeat center center/cover;
-            color: white;
-            text-align: center;
-            padding: 4rem 0;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .stat-item {
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 1rem;
-            padding: 2rem 1.5rem;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .stat-item:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.3);
-        }
-
-        .stat-icon {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 1rem;
-            filter: brightness(0) invert(1); /* makes icons white */
-            opacity: 0.9;
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #fff;
-        }
-
-        .stat-label {
-            font-size: 1.1rem;
-            opacity: 0.85;
-            margin-top: 0.5rem;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            font-family: var(--font-heading);
-        }
-
-        .cta-section {
-            padding: 5rem 0;
-            text-align: center;
-            background-color: white;
-        }
-
-        .cta-content {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--accent-color);
-            color: var(--accent-color);
-        }
-
-        .btn-outline:hover {
-            background: var(--accent-color);
-            color: white;
-        }
-
-        @media (max-width: 768px) {
-            .healing-image-gallery {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .cta-buttons .btn {
-                width: 100%;
-                max-width: 300px;
-            }
-        }
-    </style>
 </head>
 <body>
 <!-- Header and Navigation -->
 <header>
     <div class="container">
         <div class="logo">
-            <h1>Intuitive Healing and Astrology</h1>
+            <h1>The Wellness Blueprint</h1>
             <p>Sarah Lawry</p>
         </div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="blog.html">Blog</a></li>
+                <li><a href="wellness.html">Wellness</a></li>
+                <li><a href="tarot.html">Tarot</a></li>
                 <li><a href="astrology.html">Astrology</a></li>
                 <li><a href="books.html">Books</a></li>
                 <li><a href="consultation.html">Consultation</a></li>
-                <li><a href="shop.html">Shop</a></li>
             </ul>
         </nav>
         <div class="mobile-menu-btn">
@@ -237,7 +38,7 @@
 <section id="home" class="hero">
     <div class="hero-content">
         <h2>Healing Body, Mind and Soul</h2>
-        <p>Alternative non-invasive ways to heal through orthomolecular principles, circadian biology, and astrology</p>
+        <p>Discover holistic ways to heal the physical, mental, and spiritual through targeted approaches.</p>
         <a href="consultation.html" class="btn">Book a Consultation</a>
     </div>
 </section>
@@ -245,136 +46,147 @@
 <!-- Healing Principles Section -->
 <section class="healing-principles section-padding">
     <div class="container">
-        <h2 class="section-title">My Healing Approach</h2>
-        <p class="section-subtitle">Combining ancient wisdom with modern science for holistic wellness</p>
+        <h2 class="section-title">My Healing Philosophy</h2>
+        <p class="section-subtitle">
+            A distinguished integration of ancient wisdom, modern scientific understanding, and timeless intuitive insight, designed to guide the mind, body, and spirit toward profound transformation. Through this holistic approach, each individual is empowered to unlock their innate healing potential, restore balance, and cultivate lasting wellness, clarity, and harmony in all areas of life.
+        </p>
+
 
         <div class="principles-grid">
+            <!-- Tarot -->
+            <div class="principle-card">
+                <div class="principle-icon">
+                    <i class="fas fa-chess-knight"></i>
+                </div>
+                <h3>Tarot Wisdom</h3>
+                <p>Decoding archetypes and symbolism to reveal hidden patterns, illuminate choices, and provide deep clarity on your soul’s journey.</p>
+            </div>
+
+            <!-- Astrology -->
+            <div class="principle-card">
+                <div class="principle-icon">
+                    <i class="fas fa-sun"></i>
+                </div>
+                <h3>Astrological Insight</h3>
+                <p>Exploring planetary influences and your birth chart to understand strengths, vulnerabilities, and the cycles guiding your evolution.</p>
+            </div>
+
+            <!-- Orthomolecular Medicine -->
             <div class="principle-card">
                 <div class="principle-icon">
                     <i class="fas fa-atom"></i>
                 </div>
                 <h3>Orthomolecular Medicine</h3>
-                <p>Using high-dose vitamins and minerals to correct biochemical imbalances and restore optimal health at the cellular level.</p>
+                <p>Restoring balance at the cellular level with advanced nutritional therapies, high-dose vitamins, and mineral optimization.</p>
             </div>
 
+            <!-- Circadian Biology -->
             <div class="principle-card">
                 <div class="principle-icon">
                     <i class="fas fa-clock"></i>
                 </div>
                 <h3>Circadian Biology</h3>
-                <p>Aligning your daily rhythms with natural cycles to optimize hormone function, sleep, and overall wellbeing.</p>
+                <p>Realigning your inner rhythms with natural cycles to enhance hormone balance, sleep quality, vitality, and longevity.</p>
             </div>
 
+            <!-- Quantum Biology -->
             <div class="principle-card">
                 <div class="principle-icon">
-                    <i class="fas fa-star"></i>
+                    <i class="fas fa-braille"></i>
                 </div>
-                <h3>Medical Astrology</h3>
-                <p>Understanding your unique constitutional strengths and vulnerabilities through planetary influences and birth chart analysis.</p>
+                <h3>Quantum Biology</h3>
+                <p>Harnessing light, magnetism, and biophysics to unlock your body’s energetic potential and activate deeper levels of healing.</p>
+            </div>
+
+            <!-- Lifestyle & Environment -->
+            <div class="principle-card">
+                <div class="principle-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3>Lifestyle & Environment</h3>
+                <p>Designing daily practices and surroundings that support resilience, balance, and the highest expression of your wellbeing.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Healing Image Gallery -->
-<section class="container section-padding">
-    <h2 class="section-title">Pathways to Healing</h2>
-    <div class="healing-image-gallery">
-        <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Meditation and Mindfulness">
-        </div>
-        <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Natural Healing Therapies">
-        </div>
-        <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Holistic Wellness">
-        </div>
-    </div>
-</section>
-
-<!-- About Section Preview -->
+<!-- About Section -->
 <section id="about-preview" class="about-preview section-padding">
     <div class="container">
         <h2 class="section-title">About Sarah Lawry</h2>
         <div class="about-preview-content">
             <div class="about-preview-text">
-                <p>I am a health coach and professional astrologer specializing in medical astrology, orthomolecular protocols, and circadian biology to help people heal body, mind, and soul.</p>
-                <p>With 18 years of experience studying orthomolecular medicine, I provide alternative non-invasive healing approaches that work with your body's natural processes.</p>
-                <p>My journey began when conventional medicine failed to address my own health challenges. Through extensive research and application of orthomolecular principles, I discovered powerful natural healing methods that I now share with my clients.</p>
-            </div>
-            <div class="about-preview-image">
-                <div class="image-placeholder">
-                    <i class="fas fa-user-circle"></i>
-                    <p>Sarah Lawry</p>
+
+                <div class="about-preview-image">
+                        <div class="image-placeholder">
+                            <img src="Images/Sarah.jpg" alt="Sarah Lawry">
+                            <p>Sarah Lawry</p>
+                            <div class="title">Integrative Healing Specialist</div>
+                        </div>
                 </div>
+
+                <p>With over <strong>36 years</strong> of dedicated practice and research, I am a recognized authority in integrative health approaches, combining medical astrology, orthomolecular protocols, and circadian biology to facilitate profound healing of body, mind, and spirit.</p>
+
+                <p>My journey began when conventional medicine failed to address my own health challenges. Through extensive research and application of orthomolecular principles, I discovered powerful natural healing methods that I now share with clients worldwide.</p>
+
+                <div class="credentials">
+                    <div class="credential">
+                        <h4><i class="fas fa-star-of-life"></i> Medical Astrology</h4>
+                        <p>Certified Practitioner with 36 years experience</p>
+                    </div>
+                    <div class="credential">
+                        <h4><i class="fas fa-mortar-pestle"></i> Orthomolecular Medicine</h4>
+                        <p>Specialist in nutritional approaches to healing</p>
+                    </div>
+                    <div class="credential">
+                        <h4><i class="fas fa-heart"></i> Energy Healing</h4>
+                        <p>Master Practitioner in metaphysical healing arts</p>
+                    </div>
+                </div>
+
+                <div class="philosophy-section">
+                    <h3><i class="fas fa-quote-left"></i> My Healing Philosophy</h3>
+                    <p>"True healing occurs when we address the root causes of imbalance, not just the symptoms. By combining ancient wisdom with modern scientific understanding, we can unlock the body's innate ability to heal itself and achieve optimal wellness on all levels—physical, emotional, and spiritual."</p>
+                </div>
+
+                <div class="stats">
+                    <div class="stat">
+                        <i class="fas fa-user-md"></i>
+                        <div class="number">36+</div>
+                        <div class="label">Years Experience</div>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-users"></i>
+                        <div class="number">1200+</div>
+                        <div class="label">Clients Helped</div>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-graduation-cap"></i>
+                        <div class="number">5+</div>
+                        <div class="label">Healing Modalities</div>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-globe"></i>
+                        <div class="number">15</div>
+                        <div class="label">Countries Reached</div>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-book-open"></i>
+                        <div class="number">3</div>
+                        <div class="label">Books Published</div>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-star"></i>
+                        <div class="number">98%</div>
+                        <div class="label">Client Satisfaction</div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
 </section>
-
-<!-- Stats Section -->
-<section class="stats-section">
-    <div class="container">
-        <h2 class="section-title">Healing Journey By The Numbers</h2>
-        <div class="stats-grid">
-
-            <div class="stat-item">
-                <img src="https://cdn-icons-png.flaticon.com/512/1037/1037970.png" alt="Experience Icon" class="stat-icon">
-                <div class="stat-number">20+</div>
-                <div class="stat-label">Years of Experience</div>
-            </div>
-
-            <div class="stat-item">
-                <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="DNA Icon" class="stat-icon">
-                <div class="stat-number">500+</div>
-                <div class="stat-label">Clients Helped</div>
-            </div>
-
-            <div class="stat-item">
-                <img src="https://cdn-icons-png.flaticon.com/512/1828/1828614.png" alt=Satisfaction Icon" class="stat-icon">
-                <div class="stat-number">96%</div>
-                <div class="stat-label">Satisfaction Rate</div>
-            </div>
-
-            <div class="stat-item">
-                <img src="https://cdn-icons-png.flaticon.com/512/29/29302.png" alt="Books Icon" class="stat-icon">
-                <div class="stat-number">3</div>
-                <div class="stat-label">Published Books</div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
-<!-- Services Preview Section -->
-<section id="services-preview" class="services-preview section-padding">
-    <div class="container">
-        <h2 class="section-title">My Services</h2>
-        <div class="services-preview-content">
-            <div class="service-preview">
-                <i class="fas fa-star"></i>
-                <h3>Astrology Readings</h3>
-                <p>Birth charts, transits, and medical astrology to understand your unique constitution and life path.</p>
-                <a href="astrology.html">Learn More</a>
-            </div>
-
-            <div class="service-preview">
-                <i class="fas fa-heart"></i>
-                <h3>Health Consultations</h3>
-                <p>Orthomolecular protocols and lifestyle changes tailored to your individual needs and health goals.</p>
-                <a href="consultation.html">Learn More</a>
-            </div>
-
-            <div class="service-preview">
-                <i class="fas fa-book"></i>
-                <h3>Books & Resources</h3>
-                <p>Educational materials on healing, astrology, and orthomolecular medicine for your journey to wellness.</p>
-                <a href="books.html">Learn More</a>
-            </div>
-        </div>
-    </div>
-</section>
+<
 <!-- Testimonials Section -->
 <section class="testimonial-section">
     <div class="container">
@@ -397,94 +209,6 @@
         </div>
     </div>
 </section>
-<!-- Orthomolecular Section -->
-<section id="orthomolecular" class="orthomolecular section-padding">
-    <div class="container">
-        <h2 class="section-title">Orthomolecular Protocols and Nutrition</h2>
-        <div class="ortho-content">
-            <div class="ortho-card">
-                <h3><i class="fas fa-apple-alt"></i> Vitamins, Minerals and Macros</h3>
-                <p>The body could fall into a state of dis-ease or injury for all sorts of reasons. Given the correct
-                    nutrition, minerals and living conditions, the body has the ability to make astounding
-                    recoveries.</p>
-            </div>
-
-            <div class="ortho-card">
-                <h3><i class="fas fa-flask"></i> Elements and Compounds</h3>
-                <p>Iodine, Methylene Blue, Castor Oil and other compounds can be extremely beneficial to the body in
-                    many capacities when used appropriately.</p>
-            </div>
-
-            <div class="ortho-card">
-                <h3><i class="fas fa-ban"></i> Enemies to Health</h3>
-                <p>Seed oils, processed food, alcohol, smoking, and unrelenting stress are among the biggest enemies to
-                    optimal health that we often overlook.</p>
-            </div>
-
-            <div class="ortho-card">
-                <h3><i class="fas fa-tint"></i> Water Quality</h3>
-                <p>The type of water we drink makes a huge difference to our health. Investing in a good water
-                    filtration system is essential for reducing toxins like fluoride.</p>
-            </div>
-
-            <div class="ortho-card">
-                <h3><i class="fas fa-weight"></i> Exercise at Any Age</h3>
-                <p>Finding exercise you enjoy is key. Lifting weights is particularly beneficial for maintaining
-                    strength and vitality throughout life.</p>
-            </div>
-
-            <div class="ortho-card">
-                <h3><i class="fas fa-utensils"></i> Diet and Nutrition</h3>
-                <p>What we swallow is critically important. The first question when addressing health should always be
-                    "what are you eating and drinking?"</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Circadian Biology Section -->
-<section id="circadian" class="circadian section-padding">
-    <div class="container">
-        <h2 class="section-title">Circadian Biology & Environment</h2>
-        <div class="circadian-content">
-            <div class="circadian-item">
-                <h3><i class="fas fa-sun"></i> Natural Sunlight</h3>
-                <p>The effects of natural sunlight on the body and its healing abilities. How to manage and reduce Blue
-                    light toxicity for health and healing.</p>
-            </div>
-
-            <div class="circadian-item">
-                <h3><i class="fas fa-cloud-sun"></i> The Sun's Healing Abilities</h3>
-                <p>The scourge of toxic sunscreens and sunglasses on our health. We are designed to be exposed to the
-                    sun - the key is not to get burned.</p>
-            </div>
-
-            <div class="circadian-item">
-                <h3><i class="fas fa-skull-crossbones"></i> Environmental Toxins</h3>
-                <p>Fluoride, plastic, chemicals, skin care products, and deodorants can carry significant toxic loads
-                    that affect our health.</p>
-            </div>
-
-            <div class="circadian-item">
-                <h3><i class="fas fa-seedling"></i> Benefits of Environmental Change</h3>
-                <p>As you make changes to your environment, you'll notice differences in your body - more vitality,
-                    better energy, and improved wellbeing.</p>
-            </div>
-
-            <div class="circadian-item">
-                <h3><i class="fas fa-water"></i> Water and Healing</h3>
-                <p>Water quality matters for healing. Drinking from glass instead of plastic and using good filtration
-                    systems makes a significant difference.</p>
-            </div>
-
-            <div class="circadian-item">
-                <h3><i class="fas fa-feather-alt"></i> Grounding the Body</h3>
-                <p>Connecting with the earth has calming effects and helps us feel connected and whole. Grounding mats
-                    and practices can mitigate EMF exposure.</p>
-            </div>
-        </div>
-    </div>
-</section>
 
 
 <!-- Call to Action Section -->
@@ -500,38 +224,41 @@
     </div>
 </section>
 
-<!-- Footer -->
 <footer>
     <div class="container">
         <div class="footer-content">
+            <!-- Logo / Brand -->
             <div class="footer-section">
-                <h3>Intuitive Healing and Astrology</h3>
-                <p>Sarah Lawry</p>
-                <p>Johannesburg, South Africa</p>
+                <h3>The Wellness Blueprint</h3>
+                <p><i class="fas fa-user-circle footer-icon"></i> Sarah Lawry</p>
+                <p><i class="fas fa-map-marker-alt footer-icon"></i> Johannesburg, South Africa</p>
             </div>
 
+            <!-- Contact -->
             <div class="footer-section">
                 <h3>Contact</h3>
-                <p>WhatsApp: +27 72 808 7795</p>
-                <p>Email: info@intuitivehealing.com</p>
+                <p><i class="fab fa-whatsapp footer-icon"></i> +27 72 808 7795</p>
+                <p><i class="fas fa-envelope footer-icon"></i> <a href="mailto:theoremc@mweb.co.za">theoremc@mweb.co.za</a></p>
             </div>
 
+            <!-- Social -->
             <div class="footer-section">
                 <h3>Follow</h3>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
         </div>
 
         <div class="footer-bottom">
             <p>&copy; 2025 Intuitive Healing and Astrology. All rights reserved.</p>
-            <p>Disclaimer: I am not a doctor, they don't get results!.</p>
         </div>
     </div>
 </footer>
+
 
 <script src="script.js"></script>
 </body>

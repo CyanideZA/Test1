@@ -8,23 +8,360 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap"
           rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Premium Books Section Styling */
+        .books {
+            background: linear-gradient(to bottom, #fdfcfb 0%, #f5f2ef 100%);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .books:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%234cb5ae' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            z-index: 0;
+        }
+
+        .books .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .books .section-title {
+            font-family: "Playfair Display", serif;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .books .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-color), var(--gold));
+        }
+
+        .books .section-subtitle {
+            text-align: center;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 300;
+            font-size: 1.2rem;
+            margin-bottom: 60px;
+            color: #555;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .books-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 40px;
+        }
+
+        .book-item {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            position: relative;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            transform-origin: center;
+        }
+
+        .book-item:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .book-cover {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 260px;
+            background: linear-gradient(135deg, #f4f4f4 0%, #e6e6e6 100%);
+            font-size: 5.5rem;
+            color: #d4d4d4;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .book-item:hover .book-cover {
+            transform: scale(1.05);
+        }
+
+        .book-cover:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.05) 100%);
+        }
+
+        .book-cover i {
+            transition: all 0.4s ease;
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));
+            color: #3a5985; /* <-- set your default color here */
+        }
+
+        .book-item:hover .book-cover i {
+            transform: scale(1.1);
+            color: var(--accent-color);
+        }
+
+        .book-details {
+            padding: 30px;
+            text-align: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .book-details h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 1.7rem;
+            margin-bottom: 12px;
+            color: var(--primary-color);
+            line-height: 1.3;
+        }
+
+        .book-author {
+            font-size: 0.95rem;
+            font-weight: 400;
+            margin-bottom: 15px;
+            color: #777;
+        }
+
+        .book-rating {
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .book-description {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            color: #555;
+            line-height: 1.6;
+            flex: 1;
+        }
+
+        .book-availability {
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--dark-text);
+            font-size: 0.9rem;
+            padding: 8px 15px;
+            background: rgba(76, 181, 174, 0.1);
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        /* Reader Testimonials Section */
+        .testimonials {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #3a5985 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .testimonials .section-title {
+            color: white;
+            margin-bottom: 60px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .testimonial-text:before {
+            content: "";
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.2);
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            line-height: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.5rem;
+        }
+
+        .author-details h4 {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .author-details p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Author Spotlight Section */
+        .author-spotlight {
+            padding: 80px 0;
+            background: var(--light-bg);
+            text-align: center;
+        }
+
+        .author-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .author-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .author-image {
+            border-radius: 20px;
+            height: 400px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f4f4f4; /* fallback */
+        }
+
+        .author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;  /* ensures image fills container without distortion */
+            border-radius: 20px; /* match parent */
+        }
+        .author-info {
+            text-align: left;
+        }
+
+        .author-info h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .author-info p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .author-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat .number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat .label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+
+            .books-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-<!-- Header and Navigation -->
+<!-- Header -->
 <header>
-    <div class="container">
+    <div class="container header-container">
         <div class="logo">
-            <h1>Intuitive Healing and Astrology</h1>
+            <h1>The Wellness Blueprint</h1>
             <p>Sarah Lawry</p>
         </div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="blog.html">Blog</a></li>
+                <li><a href="wellness.html">Wellness</a></li>
+                <li><a href="tarot.html">Tarot</a></li>
                 <li><a href="astrology.html">Astrology</a></li>
                 <li><a href="books.html">Books</a></li>
                 <li><a href="consultation.html">Consultation</a></li>
-                <li><a href="shop.html">Shop</a></li>
             </ul>
         </nav>
         <div class="mobile-menu-btn">
@@ -36,19 +373,22 @@
 <!-- Shop Hero Section -->
 <section class="shop-hero">
     <div class="container">
-        <h2>Healing Products & Resources</h2>
-        <p>Tools and supplements to support your healing journey</p>
+        <h2>Physical | Mental | Spiritual</h2>
     </div>
 </section>
 
+<!-- Books Section -->
 <section id="books" class="books section-padding">
     <div class="container">
         <h2 class="section-title">My Books on Amazon</h2>
+        <p class="section-subtitle">Wisdom, healing, and guidance in every page</p>
+
         <div class="books-content">
+            <!-- Book 1 (Available) -->
             <div class="book-item">
-                <div class="book-badge">Bestseller</div>
+                <div class="book-badge">Popular</div>
                 <div class="book-cover">
-                    <i class="fas fa-book"></i>
+                    <i class="fas fa-heartbeat"></i>
                 </div>
                 <div class="book-details">
                     <h3>Understand and Heal Your Soul</h3>
@@ -58,149 +398,186 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        4.7/5
+                        <i class="fas fa-star-half-alt"></i> 4.8/5 (127 reviews)
                     </div>
-                    <p class="book-description">A transformative guide to soul healing and spiritual growth through
-                        intuitive practices.</p>
-                    <p class="book-availability">Available in Paperback & eBook</p>
-                    <a href="#" class="amazon-btn">
-                        <i class="fab fa-amazon"></i> Get on Amazon
-                    </a>
+                    <p class="book-description">A transformative guide to soul healing and spiritual growth through intuitive practices. Discover how to release emotional blockages, connect with your higher self, and unlock your innate healing abilities through proven metaphysical techniques.</p>
+                    <p class="book-availability">Available on Paperback and Ebook</p>
+                    <a href="https://www.amazon.com/Understand-Heal-Your-Soul-Emotional-ebook/dp/B0CGDTB4PW" class="btn"><i class="fab fa-amazon"></i> Get on Amazon</a>
                 </div>
             </div>
 
+            <!-- Book 2 (Coming Soon) -->
             <div class="book-item">
-                <div class="book-badge">Bestseller</div>
+                <div class="book-badge coming-soon">Coming Soon</div>
                 <div class="book-cover">
-                    <i class="fas fa-book-medical"></i>
+                    <i class="fas fa-scroll"></i>
                 </div>
                 <div class="book-details">
                     <h3>Introduction to Orthomolecular Medicine</h3>
                     <p class="book-author">by Sarah Lawry</p>
-                    <div class="book-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        4.8/5
-                    </div>
-                    <p class="book-description">Discover the healing power of nutrients and vitamins for optimal health
-                        and wellness.</p>
-                    <p class="book-availability">Available in Paperback & eBook</p>
-                    <a href="#" class="amazon-btn">
-                        <i class="fab fa-amazon"></i> Get on Amazon
-                    </a>
+                    <p class="book-description">Discover the healing power of nutrients and vitamins for optimal health and wellness. This comprehensive guide reveals how to use high-dose vitamins and minerals to prevent and treat diseases, based on 36 years of clinical experience and research.</p>
+                    <p class="book-availability">Available soon on Amazon</p>
+                    <a href="#" class="btn coming-soon"><i class="fas fa-clock"></i> Coming Soon</a>
                 </div>
             </div>
 
+            <!-- Book 3 (Coming Soon) -->
             <div class="book-item">
-                <div class="book-badge">Bestseller</div>
+                <div class="book-badge coming-soon">Coming Soon</div>
                 <div class="book-cover">
                     <i class="fas fa-gem"></i>
                 </div>
                 <div class="book-details">
                     <h3>Metaphysical Masterclass</h3>
                     <p class="book-author">by Sarah Lawry</p>
-                    <div class="book-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        4.5/5
+                    <p class="book-description">Explore the profound connections between astrology, health, and spiritual wellbeing. This masterclass reveals how celestial influences impact your physical health and provides practical techniques to align with cosmic energies for optimal wellness.</p>
+                    <p class="book-availability">Available soon on Amazon</p>
+                    <a href="#" class="btn coming-soon"><i class="fas fa-clock"></i> Coming Soon</a>
+                </div>
+            </div>
+        </div>
+
+</section>
+<!-- Reader Testimonials Section -->
+<section class="testimonials">
+    <div class="container">
+        <h2 class="section-title">Reader Testimonials</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">Sarah's book on Orthomolecular Medicine completely transformed my approach to health. The practical advice and deep wisdom in these pages helped me overcome chronic fatigue that traditional medicine couldn't address.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <i class="fas fa-user"></i>
                     </div>
-                    <p class="book-description">Explore the connections between astrology, health, and spiritual
-                        wellbeing.</p>
-                    <p class="book-availability">Available in eBook</p>
-                    <a href="#" class="amazon-btn">
-                        <i class="fab fa-amazon"></i> Get on Amazon
-                    </a>
+                    <div class="author-details">
+                        <h4>Jennifer K.</h4>
+                        <p>Verified Purchaser</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <p class="testimonial-text">I've read many books on healing, but none have resonated with me as deeply as Sarah's work. Her unique blend of scientific rigor and spiritual wisdom is exactly what the holistic health community needs right now.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="author-details">
+                        <h4>Michael T.</h4>
+                        <p>Health Coach</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <p class="testimonial-text">As a medical professional, I'm naturally skeptical of alternative approaches, but Sarah's evidence-based perspective combined with her intuitive wisdom won me over. Highly recommend her books to both practitioners and patients!</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="author-details">
+                        <h4>Dr. Amanda L.</h4>
+                        <p>Naturopathic Physician</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Recommended Reading Section -->
-<section id="recommended-reading" class="recommended-reading section-padding">
+<!-- Author Spotlight Section -->
+<section class="author-spotlight">
     <div class="container">
-        <h2 class="section-title">Recommended Reading</h2>
-        <div class="reading-content">
-            <div class="reading-category">
-                <h3>Orthomolecular Medicine</h3>
-                <ul>
-                    <li>Nutrition and Physical Degeneration - Weston A Price</li>
-                    <li>Primal Body, Primal Mind - Nora Gedgaudas</li>
-                    <li>The Magnesium Miracle - Carolyn Dean</li>
-                    <li>Iodine: Why You Need It, Why You Can't Live Without It - David Brownstein</li>
-                </ul>
+        <h2 class="section-title">About the Author</h2>
+        <div class="author-content">
+            <div class="author-image">
+                <img src="Images/Sarah.jpg" alt="Sarah Lawry">
             </div>
+            <div class="author-info">
+                <h2>Sarah Lawry</h2>
+                <p>With over 36 years of experience in holistic healing and medical astrology, Sarah Lawry is a recognized authority in integrative health approaches. Her unique methodology combines scientific research with ancient wisdom traditions.</p>
+                <p>Sarah's mission is to empower individuals to take control of their health through education and practical guidance. Her books distill decades of clinical experience into accessible formats that readers can apply to their own healing journeys.</p>
 
-            <div class="reading-category">
-                <h3>Circadian Biology</h3>
-                <ul>
-                    <li>Lights Out: Sleep, Sugar, and Survival - T.S. Wiley</li>
-                    <li>The Circadian Code - Satchin Panda</li>
-                    <li>Why We Sleep - Matthew Walker</li>
-                </ul>
-            </div>
-
-            <div class="reading-category">
-                <h3>Astrology</h3>
-                <ul>
-                    <li>The Only Astrology Book You'll Ever Need - Joanna Martine Woolfolk</li>
-                    <li>Astrology for the Soul - Jan Spiller</li>
-                    <li>Parker's Astrology - Julia & Derek Parker</li>
-                </ul>
-            </div>
-
-            <div class="reading-category">
-                <h3>Addiction Recovery</h3>
-                <ul>
-                    <li>In the Realm of Hungry Ghosts - Gabor Maté</li>
-                    <li>The Body Keeps the Score - Bessel van der Kolk</li>
-                    <li>This Naked Mind - Annie Grace</li>
-                </ul>
+                <div class="author-stats">
+                    <div class="stat">
+                        <div class="number">36+</div>
+                        <div class="label">Years Experience</div>
+                    </div>
+                    <div class="stat">
+                        <div class="number">5K+</div>
+                        <div class="label">Books Sold</div>
+                    </div>
+                    <div class="stat">
+                        <div class="number">12</div>
+                        <div class="label">Published Works</div>
+                    </div>
+                    <div class="stat">
+                        <div class="number">98%</div>
+                        <div class="label">Reader Satisfaction</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Footer -->
+<!-- Call to Action Section -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Begin Your Healing Journey Today</h2>
+            <p>Take the first step toward balanced health and spiritual alignment. Whether you're seeking astrological guidance, orthomolecular protocols, or both, I'm here to support your journey to wellness.</p>
+            <div class="cta-buttons">
+                <a href="consultation.html" class="btn">Book a Consultation</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 <footer>
     <div class="container">
         <div class="footer-content">
+            <!-- Logo / Brand -->
             <div class="footer-section">
-                <h3>Intuitive Healing and Astrology</h3>
-                <p>Sarah Lawry</p>
-                <p>Johannesburg, South Africa</p>
+                <h3>The Wellness Blueprint</h3>
+                <p><i class="fas fa-user-circle footer-icon"></i> Sarah Lawry</p>
+                <p><i class="fas fa-map-marker-alt footer-icon"></i> Johannesburg, South Africa</p>
             </div>
 
+            <!-- Contact -->
             <div class="footer-section">
                 <h3>Contact</h3>
-                <p>WhatsApp: +27 72 808 7795</p>
-                <p>Email: info@intuitivehealing.com</p>
+                <p><i class="fab fa-whatsapp footer-icon"></i> +27 72 808 7795</p>
+                <p><i class="fas fa-envelope footer-icon"></i> <a href="mailto:theoremc@mweb.co.za">theoremc@mweb.co.za</a></p>
             </div>
 
+            <!-- Social -->
             <div class="footer-section">
                 <h3>Follow</h3>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
         </div>
 
         <div class="footer-bottom">
             <p>&copy; 2025 Intuitive Healing and Astrology. All rights reserved.</p>
-            <p>Disclaimer: I am not a doctor, they don't get results!.</p>
         </div>
     </div>
 </footer>
 
-<script src="script.js"></script>
+<script>
+  // Mobile Menu Toggle
+  const mobileBtn = document.querySelector(".mobile-menu-btn");
+  const navMenu = document.querySelector("header nav ul");
+  mobileBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
+</script>
+
 </body>
 </html>

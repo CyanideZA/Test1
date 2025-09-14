@@ -14,17 +14,18 @@
 <header>
     <div class="container">
         <div class="logo">
-            <h1>Intuitive Healing and Astrology</h1>
+            <h1>The Wellness Blueprint</h1>
             <p>Sarah Lawry</p>
         </div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="blog.html">Blog</a></li>
+                <li><a href="wellness.html">Wellness</a></li>
+                <li><a href="tarot.html">Tarot</a></li>
                 <li><a href="astrology.html">Astrology</a></li>
                 <li><a href="books.html">Books</a></li>
                 <li><a href="consultation.html">Consultation</a></li>
-                <li><a href="shop.html">Shop</a></li>
             </ul>
         </nav>
         <div class="mobile-menu-btn">
@@ -33,11 +34,11 @@
     </div>
 </header>
 
+
 <!-- Shop Hero Section -->
 <section class="shop-hero">
     <div class="container">
-        <h2>Healing Products & Resources</h2>
-        <p>Tools and supplements to support your healing journey</p>
+        <h2>Physical | Mental | Spiritual</h2>
     </div>
 </section>
 
@@ -54,114 +55,743 @@
             <div class="astrology-services">
                 <div class="service">
                     <h3><i class="fas fa-star"></i> Birth or Natal Charts</h3>
-                    <p>Understanding who you are, your work areas, and strengths through your exact birth information
-                        (date, time, and place).</p>
+                    <p>Discover your true nature, life themes, strengths, and challenges through your exact birth details
+                        (date, time, and place). A foundational map of who you are and what you came here to do.</p>
                 </div>
 
                 <div class="service">
-                    <h3><i class="fas fa-chart-line"></i> Transits and Progressions</h3>
-                    <p>What's to come in your life based on planetary movements and how they affect different areas of
-                        your life.</p>
+                    <h3><i class="fas fa-chart-line"></i> Transits & Progressions</h3>
+                    <p>Gain insight into the unfolding chapters of your life by exploring current and future planetary movements
+                        and how they influence your career, relationships, health, and personal growth.</p>
                 </div>
 
                 <div class="service">
                     <h3><i class="fas fa-heartbeat"></i> Medical Astrology</h3>
-                    <p>Using astrology to facilitate healing by understanding health tendencies and optimal approaches
-                        for your unique constitution.</p>
+                    <p>Understand your body’s unique tendencies, natural strengths, and vulnerabilities.
+                        Learn optimal healing approaches tailored to your astrological constitution.</p>
                 </div>
 
                 <div class="service">
-                    <h3><i class="fas fa-fire"></i> Mars and Vitality</h3>
-                    <p>Your Mars placement shows your vitality, sex drive, preferred exercise types, and healing
-                        modalities that work best for you.</p>
+                    <h3><i class="fas fa-venus-mars"></i> Synastry & Relationship Charts</h3>
+                    <p>Explore compatibility, connection, and dynamics in love, friendship, family, or business partnerships.
+                        See how energies align or challenge each other, and how to strengthen bonds.</p>
                 </div>
-            </div>
 
-            <div class="astrology-resource">
-                <p>To learn more about Astrology, contact Alison Price at <a href="https://starzology.com"
-                                                                             target="_blank">starzology.com</a>. She is
-                    an excellent Astrology teacher in Vancouver, Canada.</p>
+                <div class="service">
+                    <h3><i class="fas fa-child"></i> Children’s Astrology</h3>
+                    <p>Gain valuable insight into your child’s unique personality, learning style, and emotional needs
+                        to better support their growth and development from an early age.</p>
+                </div>
+
+                <div class="service">
+                    <h3><i class="fas fa-paw"></i> Animal Astrology</h3>
+                    <p>Understand your pet’s temperament, needs, and deeper bond with you through their birth chart.
+                        A unique way to support harmony and wellbeing in your animal companions.</p>
+                </div>
+
+                <div class="service">
+                    <h3><i class="fas fa-bullseye"></i> Career Astrology</h3>
+                    <p>Find clarity on your true calling, strengths, and work path. Learn where your talents are best expressed
+                        and how to align with your authentic purpose.</p>
+                </div>
+
+                <div class="service">
+                    <h3><i class="fas fa-globe"></i> Relocation & Astrocartography</h3>
+                    <p>Discover how different locations around the world influence your energy, opportunities,
+                        and personal growth. Ideal for moving, traveling, or planning retreats.</p>
+                </div>
+
+
             </div>
         </div>
     </div>
 </section>
 
-<!-- Addictions Section -->
-<section id="addictions" class="addictions section-padding">
+<canvas id="planetCanvas"></canvas>
+
+<!-- Call to Action Section -->
+<section class="cta-section">
     <div class="container">
-        <h2 class="section-title">Addictions</h2>
-        <div class="addictions-content">
-            <div class="addiction-item">
-                <h3><i class="fas fa-question"></i> Why We Do It to Ourselves</h3>
-                <p>Adult life can be challenging, and many turn to substances to self-medicate or self-soothe. Addiction
-                    knows no race, gender, or creed and can ruin lives without intervention.</p>
-            </div>
-
-            <div class="addiction-item">
-                <h3><i class="fas fa-brain"></i> Neurotransmitters' Role</h3>
-                <p>Our dopamine receptors get used to the "hit" from addictive substances, creating tolerance and
-                    dependence that poisons the body and mind.</p>
-            </div>
-
-            <div class="addiction-item">
-                <h3><i class="fas fa-shield-alt"></i> Antidotes to Addiction</h3>
-                <p>The main ingredient for recovery is willingness. Various treatments, medicines, and therapies can
-                    help, especially when combined with addressing underlying trauma.</p>
-            </div>
-
-            <div class="addiction-item">
-                <h3><i class="fas fa-heart"></i> Healing Addictions</h3>
-                <p>People typically only want to get better when the pain of addiction becomes worse than what they're
-                    getting out of it. Multiple approaches work best for recovery.</p>
-            </div>
-
-            <div class="addiction-item">
-                <h3><i class="fas fa-exclamation-circle"></i> Importance of Addressing Addiction</h3>
-                <p>Addiction often prevents people from addressing other health concerns. It's hard to focus on blood
-                    pressure or insulin resistance when consumed by addiction.</p>
-            </div>
-
-            <div class="addiction-item">
-                <h3><i class="fas fa-excuses"></i> Excuses and Denial</h3>
-                <p>Many don't recognize their addictive behaviors or make excuses. Only through honest self-review can
-                    people see the need for change.</p>
+        <div class="cta-content">
+            <h2>Begin Your Healing Journey Today</h2>
+            <p>Take the first step toward balanced health and spiritual alignment. Whether you're seeking astrological guidance, orthomolecular protocols, or both, I'm here to support your journey to wellness.</p>
+            <div class="cta-buttons">
+                <a href="consultation.html" class="btn">Book a Consultation</a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Footer -->
-<footer>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const canvas = document.getElementById('planetCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Resize canvas to fit window
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    // ----------------------
+    // BACKGROUND & ELEMENTS
+    // ----------------------
+
+    // Star field (small dots in background)
+    const stars = [];
+    // Create stars
+    for (let i = 0; i < 200; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 1.5 + 0.5,
+        brightness: Math.random() * 0.6 + 0.3,   // base brightness
+        twinkleSpeed: Math.random() * 0.006 + 0.0006,
+        twinklePhase: Math.random() * Math.PI * 2   // unique offset
+      });
+    }
+
+    // Solar system planets with realistic properties
+    const planets = [
+      { // Mercury
+        name: "Mercury",
+        radius: 4,
+        distance: 60,
+        angle: Math.random() * Math.PI * 2,
+        speed: 0.0079,
+        color: '#555555',
+        hasRing: false,
+        moons: 0
+      },
+      { // Venus
+        name: "Venus",
+        radius: 8,
+        distance: 85,
+        angle: Math.random() * Math.PI * 2,
+        speed: 0.006,
+        color: '#888888',
+        hasRing: false,
+        moons: 0
+      },
+      { // Earth
+        name: "Earth",
+        radius: 10,
+        distance: 110,
+        angle: Math.random() * Math.PI * 2,
+        speed: 0.005,
+        color: '#444444',
+        hasRing: false,
+        moons: 1
+      },
+      { // Mars
+        name: "Mars",
+        radius: 6,
+        distance: 135,
+        angle: Math.random() * Math.PI * 2,
+        speed: 0.004,
+        color: '#666666',
+        hasRing: false,
+        moons: 2
+      },
+      { // Jupiter
+        name: "Jupiter",
+        radius: 25,
+        distance: 180,
+        angle: Math.random() * Math.PI * 2,
+        speed: 0.0021,
+        color: '#777777',
+        hasRing: true,
+        moons: 4
+      },
+      { // Saturn
+        name: "Saturn",
+        radius: 22,
+        distance: 230,
+        angle: Math.random() * Math.PI * 2,
+        speed: 0.0017,
+        color: '#999999',
+        hasRing: true,
+        moons: 5
+      },
+      { // Uranus
+        name: "Uranus",
+        radius: 14,
+        distance: 270,
+        angle: Math.random() * Math.PI * 2,
+        speed: 0.0012,
+        color: '#AAAAAA',
+        hasRing: true,
+        moons: 3
+      },
+      { // Neptune
+        name: "Neptune",
+        radius: 14,
+        distance: 310,
+        angle: Math.random() * Math.PI * 2,
+        speed: 0.00095,
+        color: '#333333',
+        hasRing: true,
+        moons: 2
+      },
+      { // Pluto
+        name: "Pluto",
+        radius: 2,
+        distance: 350,
+        angle: Math.random() * Math.PI * 2,
+        speed: 0.0005,
+        color: '#bbbbbb',
+        hasRing: false,
+        moons: 5
+      }
+    ];
+
+    // Central sun
+    const sunRadius = 30;
+    const sunColor = '#DDDDDD';
+
+    // Meteorites with more realistic properties
+    const meteors = [];
+    const maxMeteors = 3;
+
+    // Create initial meteors
+    for (let i = 0; i < maxMeteors; i++) {
+      createMeteor();
+    }
+
+    function createMeteor() {
+      // Randomly pick a spawn side: 0=top, 1=right, 2=bottom, 3=left
+      const side = Math.floor(Math.random() * 4);
+      let startX, startY, speedX, speedY;
+
+      switch (side) {
+        case 0: // Top
+          startX = Math.random() * canvas.width;
+          startY = -20;
+          speedX = Math.random() * 6 - 3;   // drift left or right
+          speedY = Math.random() * 4 + 2;   // downward
+          break;
+        case 1: // Right
+          startX = canvas.width + 20;
+          startY = Math.random() * canvas.height;
+          speedX = -(Math.random() * 4 + 2); // leftward
+          speedY = Math.random() * 4 - 2;    // up or down
+          break;
+        case 2: // Bottom
+          startX = Math.random() * canvas.width;
+          startY = canvas.height + 20;
+          speedX = Math.random() * 6 - 3;   // drift left or right
+          speedY = -(Math.random() * 4 + 2); // upward
+          break;
+        case 3: // Left
+          startX = -20;
+          startY = Math.random() * canvas.height;
+          speedX = Math.random() * 4 + 2;   // rightward
+          speedY = Math.random() * 4 - 2;   // up or down
+          break;
+      }
+
+      meteors.push({
+        x: startX,
+        y: startY,
+        length: Math.random() * 40 + 30,
+        speedX: speedX,
+        speedY: speedY,
+        opacity: Math.random() * 0.7 + 0.3,
+        trail: [], // For storing trail positions
+        trailLength: Math.floor(Math.random() * 5) + 5,
+        brightness: Math.random() * 0.5 + 0.5,
+        size: Math.random() * 2 + 1
+      });
+    }
+
+    // Alien craft class
+    class AlienCraft {
+      constructor() {
+        this.active = true;
+        this.size = Math.random() * 6 + 6; // Varying size
+        this.speed = Math.random() * 1.5 + 1.5; // Varying speed
+        this.laserColor = `hsl(${Math.random() * 360}, 100%, 60%)`; // Random laser color
+        this.phase = 'approach'; // 'approach', 'bumping', 'laser', 'depart'
+        this.laserProgress = 0;
+        this.laserMaxProgress = 200;
+        this.laserWidth = 1;
+        this.laserParticles = [];
+        this.bumpProgress = 0;
+        this.bumpDirection = 0;
+        this.bumpDistance = 0;
+        this.bumpSpeed = 0;
+
+        // Select a random planet
+        const randomPlanet = planets[Math.floor(Math.random() * planets.length)];
+        this.targetPlanet = randomPlanet;
+
+        // Start from a random position outside the canvas
+        const side = Math.floor(Math.random() * 4);
+        switch (side) {
+          case 0: // Top
+            this.x = Math.random() * canvas.width;
+            this.y = -30;
+            break;
+          case 1: // Right
+            this.x = canvas.width + 30;
+            this.y = Math.random() * canvas.height;
+            break;
+          case 2: // Bottom
+            this.x = Math.random() * canvas.width;
+            this.y = canvas.height + 30;
+            break;
+          case 3: // Left
+            this.x = -30;
+            this.y = Math.random() * canvas.height;
+            break;
+        }
+      }
+
+      // Check if this craft is at the same planet as another craft
+      isAtSamePlanet(otherCraft) {
+        if (!otherCraft || !otherCraft.targetPlanet) return false;
+        return this.targetPlanet.name === otherCraft.targetPlanet.name;
+      }
+
+      // Create laser particles for effect
+      createLaserParticles(x, y, count) {
+        for (let i = 0; i < count; i++) {
+          this.laserParticles.push({
+            x: x,
+            y: y,
+            size: Math.random() * 2 + 1,
+            speedX: (Math.random() - 0.5) * 2,
+            speedY: Math.random() * 3 + 1,
+            life: Math.random() * 30 + 20,
+            color: this.laserColor.replace(')', `, ${0.7 + Math.random() * 0.3})`).replace('hsl', 'hsla')
+          });
+        }
+      }
+
+      // Update laser particles
+      updateLaserParticles() {
+        for (let i = this.laserParticles.length - 1; i >= 0; i--) {
+          const p = this.laserParticles[i];
+          p.x += p.speedX;
+          p.y += p.speedY;
+          p.life--;
+
+          if (p.life <= 0) {
+            this.laserParticles.splice(i, 1);
+          }
+        }
+      }
+
+      // Draw laser particles
+      drawLaserParticles() {
+        this.laserParticles.forEach(p => {
+          const alpha = p.life / 50;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          ctx.fillStyle = p.color.replace(')', `, ${alpha})`).replace('hsla', 'hsla');
+          ctx.fill();
+        });
+      }
+
+      // Update craft position and state
+      update(alienCrafts) {
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+
+        // Calculate target planet position
+        const targetX = centerX + Math.cos(this.targetPlanet.angle) * this.targetPlanet.distance;
+        const targetY = centerY + Math.sin(this.targetPlanet.angle) * this.targetPlanet.distance * 0.7;
+
+        // Position directly above the planet (90 degrees)
+        const targetAboveX = targetX;
+        const targetAboveY = targetY - (this.targetPlanet.radius * 4);
+
+        if (this.phase === 'approach') {
+
+          // Move craft toward position above target planet
+          const dx = targetAboveX - this.x;
+          const dy = targetAboveY - this.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance > 2) {
+            // Normalize and scale by speed
+            this.x += (dx / distance) * this.speed;
+            this.y += (dy / distance) * this.speed;
+          } else {
+            // Reached target, switch to laser phase
+            this.phase = 'laser';
+          }
+        }
+        else if (this.phase === 'laser') {
+          // Follow the planet's movement
+          this.x = targetAboveX;
+          this.y = targetAboveY;
+
+          // Emit laser beam
+          if (this.laserProgress < this.laserMaxProgress) {
+            this.laserProgress += 2;
+
+            // Expand laser width over time
+            this.laserWidth = 1 + (this.laserProgress / this.laserMaxProgress) * 5;
+
+            // Create particles at impact point
+            if (this.laserProgress % 10 === 0) {
+              this.createLaserParticles(targetX, targetY, 5);
+            }
+          } else {
+            // Laser complete, switch to depart phase
+            this.phase = 'depart';
+            this.departureAngle = Math.random() * Math.PI * 2;
+          }
+
+          // Update laser particles
+          this.updateLaserParticles();
+        }
+        else if (this.phase === 'depart') {
+          // Move in the departure direction
+          this.x += Math.cos(this.departureAngle) * this.speed * 1.5;
+          this.y += Math.sin(this.departureAngle) * this.speed * 1.5;
+
+          // Check if off screen
+          if (this.x < -50 || this.x > canvas.width + 50 ||
+              this.y < -50 || this.y > canvas.height + 50) {
+            this.active = false;
+          }
+        }
+      }
+
+      // Draw the craft
+      draw() {
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+
+        // Calculate target planet position
+        const targetX = centerX + Math.cos(this.targetPlanet.angle) * this.targetPlanet.distance;
+        const targetY = centerY + Math.sin(this.targetPlanet.angle) * this.targetPlanet.distance * 0.7;
+
+        if (this.phase === 'laser') {
+          // Draw cone-shaped laser beam
+          const laserLength = this.targetPlanet.radius * 2.5;
+          const baseWidth = this.laserWidth;
+
+          // Create gradient for laser
+          const laserGradient = ctx.createLinearGradient(
+              this.x, this.y,
+              this.x, this.y + laserLength
+          );
+          laserGradient.addColorStop(0, this.laserColor.replace(')', ', 0.8)').replace('hsl', 'hsla'));
+          laserGradient.addColorStop(0.5, this.laserColor.replace(')', ', 0.5)').replace('hsl', 'hsla'));
+          laserGradient.addColorStop(1, this.laserColor.replace(')', ', 0)').replace('hsl', 'hsla'));
+
+          // Draw cone shape
+          ctx.beginPath();
+          ctx.moveTo(this.x - baseWidth/2, this.y);
+          ctx.lineTo(this.x - baseWidth, this.y + laserLength);
+          ctx.lineTo(this.x + baseWidth, this.y + laserLength);
+          ctx.lineTo(this.x + baseWidth/2, this.y);
+          ctx.closePath();
+          ctx.fillStyle = laserGradient;
+          ctx.fill();
+
+          // Draw central beam
+          ctx.beginPath();
+          ctx.moveTo(this.x, this.y);
+          ctx.lineTo(this.x, this.y + laserLength);
+          ctx.strokeStyle = this.laserColor.replace(')', ', 0.9)').replace('hsl', 'hsla');
+          ctx.lineWidth = 1;
+          ctx.stroke();
+
+          // Draw impact effect on planet
+          ctx.beginPath();
+          ctx.arc(targetX, targetY, this.targetPlanet.radius * 0.7, 0, Math.PI * 2);
+          ctx.fillStyle = this.laserColor.replace(')', ', 0.4)').replace('hsl', 'hsla');
+          ctx.fill();
+
+          // Draw brighter center
+          ctx.beginPath();
+          ctx.arc(targetX, targetY, this.targetPlanet.radius * 0.3, 0, Math.PI * 2);
+          ctx.fillStyle = this.laserColor.replace(')', ', 0.8)').replace('hsl', 'hsla');
+          ctx.fill();
+
+          // Draw laser particles
+          this.drawLaserParticles();
+        }
+
+        // Draw alien craft (UFO shape) - always upright
+        ctx.save();
+        ctx.translate(this.x, this.y);
+
+        // UFO body (saucer shape)
+        ctx.fillStyle = '#000';
+        ctx.beginPath();
+        ctx.ellipse(0, 0, this.size * 1.5, this.size * 0.7, 0, 0, Math.PI * 2);
+        ctx.fill();
+
+        // UFO dome
+        ctx.fillStyle = '#333';
+        ctx.beginPath();
+        ctx.arc(0, 0, this.size * 0.8, 0, Math.PI * 2);
+        ctx.fill();
+
+        // UFO lights (using the laser color)
+        ctx.fillStyle = this.laserColor;
+        for (let i = 0; i < 5; i++) {
+          const angle = (i / 5) * Math.PI * 2;
+          ctx.beginPath();
+          ctx.arc(
+              Math.cos(angle) * this.size * 1.2,
+              Math.sin(angle) * this.size * 0.6,
+              this.size * 0.2,
+              0,
+              Math.PI * 2
+          );
+          ctx.fill();
+        }
+
+        ctx.restore();
+      }
+    }
+
+    // Array to hold all alien crafts
+    const alienCrafts = [];
+
+    document.addEventListener('keydown', function(event) {
+      if (event.code === 'Space') {
+        event.preventDefault(); // 🚫 stop page from scrolling
+
+        // Create a new alien craft
+        alienCrafts.push(new AlienCraft());
+      }
+    });
+
+    // ----------------------
+    // ANIMATION LOOP
+    // ----------------------
+    function animate() {
+      requestAnimationFrame(animate);
+
+      // White background
+      ctx.fillStyle = '#FFF';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      const centerX = canvas.width / 2;
+      const centerY = canvas.height / 2;
+
+      // Draw stars with smooth twinkle (in greyscale)
+      stars.forEach(star => {
+        // Oscillate brightness with sine wave
+        const twinkle = 0.5 + 0.5 * Math.sin(performance.now() * star.twinkleSpeed + star.twinklePhase);
+
+        // Final alpha value
+        const alpha = star.brightness * (0.6 + twinkle * 0.8);
+
+        ctx.fillStyle = `rgba(0, 0, 0, ${alpha})`;
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      // Update and draw meteors (in greyscale)
+      for (let i = meteors.length - 1; i >= 0; i--) {
+        const meteor = meteors[i];
+
+        // Add current position to trail
+        meteor.trail.push({x: meteor.x, y: meteor.y});
+
+        // Keep trail at specified length
+        if (meteor.trail.length > meteor.trailLength) {
+          meteor.trail.shift();
+        }
+
+        // Update position
+        meteor.x += meteor.speedX;
+        meteor.y += meteor.speedY;
+
+        // Draw meteor trail (from oldest to newest)
+        for (let j = 0; j < meteor.trail.length; j++) {
+          const point = meteor.trail[j];
+          const age = j / meteor.trail.length; // 0 (oldest) to 1 (newest)
+          const trailOpacity = meteor.opacity * age * 0.7;
+          const trailSize = meteor.size * (0.5 + age * 0.5);
+
+          ctx.beginPath();
+          ctx.arc(point.x, point.y, trailSize, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(0, 0, 0, ${trailOpacity})`;
+          ctx.fill();
+        }
+
+        // Draw meteor head
+        ctx.beginPath();
+        ctx.arc(meteor.x, meteor.y, meteor.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(0, 0, 0, ${meteor.opacity})`;
+        ctx.fill();
+
+        // Draw bright core
+        ctx.beginPath();
+        ctx.arc(meteor.x, meteor.y, meteor.size * 0.5, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(50, 50, 50, ${meteor.opacity})`;
+        ctx.fill();
+
+        // Remove meteor if out of screen
+        if (meteor.x < -meteor.length || meteor.y > canvas.height + meteor.length) {
+          meteors.splice(i, 1);
+          createMeteor(); // Replace with a new meteor
+        }
+      }
+
+      // Draw orbital paths
+      planets.forEach(planet => {
+        ctx.beginPath();
+        ctx.ellipse(centerX, centerY, planet.distance, planet.distance * 0.7, 0, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(0, 0, 0, 0.1)'; // lighter, more subtle
+        ctx.stroke();
+      });
+
+      // Draw central sun with glow effect (in greyscale)
+      // Sun glow
+      const gradient = ctx.createRadialGradient(
+          centerX, centerY, sunRadius,
+          centerX, centerY, sunRadius * 2.5
+      );
+      gradient.addColorStop(0, 'rgba(150, 150, 150, 0.8)');
+      gradient.addColorStop(1, 'rgba(150, 150, 150, 0)');
+
+      ctx.beginPath();
+      ctx.arc(centerX, centerY, sunRadius * 2.5, 0, Math.PI * 2);
+      ctx.fillStyle = gradient;
+      ctx.fill();
+
+      // Sun body
+      ctx.beginPath();
+      ctx.arc(centerX, centerY, sunRadius, 0, Math.PI * 2);
+      ctx.fillStyle = sunColor;
+      ctx.fill();
+
+      // Draw planets
+      planets.forEach(planet => {
+        planet.angle += planet.speed;
+
+        // Calculate planet position
+        const planetX = centerX + Math.cos(planet.angle) * planet.distance;
+        const planetY = centerY + Math.sin(planet.angle) * planet.distance * 0.7;
+
+        // Draw planet
+        ctx.beginPath();
+        ctx.arc(planetX, planetY, planet.radius, 0, Math.PI * 2);
+        ctx.fillStyle = planet.color;
+        ctx.fill();
+
+        // Draw planet highlight
+        ctx.beginPath();
+        ctx.arc(
+            planetX - planet.radius * 0.3,
+            planetY - planet.radius * 0.3,
+            planet.radius * 0.6,
+            0,
+            Math.PI * 2
+        );
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
+        ctx.fill();
+
+        // Draw rings for gas giants
+        if (planet.hasRing) {
+          ctx.beginPath();
+          ctx.ellipse(
+              planetX,
+              planetY,
+              planet.radius * 1.8,
+              planet.radius * 0.5,
+              planet.angle,
+              0,
+              Math.PI * 2
+          );
+          ctx.strokeStyle = '#555555';
+          ctx.lineWidth = 2;
+          ctx.stroke();
+
+          // Inner ring
+          ctx.beginPath();
+          ctx.ellipse(
+              planetX,
+              planetY,
+              planet.radius * 1.5,
+              planet.radius * 0.4,
+              planet.angle,
+              0,
+              Math.PI * 2
+          );
+          ctx.strokeStyle = '#777777';
+          ctx.lineWidth = 1.5;
+          ctx.stroke();
+        }
+
+        // Draw moons
+        for (let i = 0; i < planet.moons; i++) {
+          const moonAngle = planet.angle * 4 + (i * Math.PI * 2 / planet.moons);
+          const moonDistance = planet.radius * 1.8;
+          const moonX = planetX + Math.cos(moonAngle) * moonDistance;
+          const moonY = planetY + Math.sin(moonAngle) * moonDistance;
+
+          ctx.beginPath();
+          ctx.arc(moonX, moonY, planet.radius * 0.15, 0, Math.PI * 2);
+          ctx.fillStyle = '#333';
+          ctx.fill();
+        }
+      });
+
+      // Update and draw all alien crafts
+      for (let i = alienCrafts.length - 1; i >= 0; i--) {
+        const craft = alienCrafts[i];
+
+        if (craft.active) {
+          craft.update(alienCrafts);
+          craft.draw();
+        } else {
+          // Remove inactive crafts
+          alienCrafts.splice(i, 1);
+        }
+      }
+    }
+
+    animate();
+  });
+</script><footer>
     <div class="container">
         <div class="footer-content">
+            <!-- Logo / Brand -->
             <div class="footer-section">
-                <h3>Intuitive Healing and Astrology</h3>
-                <p>Sarah Lawry</p>
-                <p>Johannesburg, South Africa</p>
+                <h3>The Wellness Blueprint</h3>
+                <p><i class="fas fa-user-circle footer-icon"></i> Sarah Lawry</p>
+                <p><i class="fas fa-map-marker-alt footer-icon"></i> Johannesburg, South Africa</p>
             </div>
 
+            <!-- Contact -->
             <div class="footer-section">
                 <h3>Contact</h3>
-                <p>WhatsApp: +27 72 808 7795</p>
-                <p>Email: info@intuitivehealing.com</p>
+                <p><i class="fab fa-whatsapp footer-icon"></i> +27 72 808 7795</p>
+                <p><i class="fas fa-envelope footer-icon"></i> <a href="mailto:theoremc@mweb.co.za">theoremc@mweb.co.za</a></p>
             </div>
 
+            <!-- Social -->
             <div class="footer-section">
                 <h3>Follow</h3>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
         </div>
 
         <div class="footer-bottom">
             <p>&copy; 2025 Intuitive Healing and Astrology. All rights reserved.</p>
-            <p>Disclaimer: I am not a doctor, they don't get results!.</p>
         </div>
     </div>
 </footer>
+
 
 <script src="script.js"></script>
 </body>
